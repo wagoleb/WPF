@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1200">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="286*"/>
+            <RowDefinition Height="283*"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="Button1" Margin="10,10,0,0" Content="Click Me !" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="173" Click="Button1_Click" />
+        <Label Name="labelText" Content="Label content" Margin="10,248,979,0" BorderThickness="1" BorderBrush="Black" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

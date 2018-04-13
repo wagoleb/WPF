@@ -20,9 +20,18 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int counter
+        { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
+            counter = 0;
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            labelText.Content = counter++;
+
         }
     }
 }
