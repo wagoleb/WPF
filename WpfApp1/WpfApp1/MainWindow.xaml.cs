@@ -20,38 +20,9 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int counter
-        { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
-            counter = 0;
-            /*
-            Button a = new Button();
-            a.Content = "Testowy";
-            DefaultGrid.Children.Add(a);
-            */
-        }
-
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
-            labelText.Content = counter++;
-
-        }
-
-        private void clickOnSmall2(object sender, RoutedEventArgs e)
-        {
-            wiadomosci.Text += "klikniety small  2 ";
-        }
-
-        private void clickOnSMall1(object sender, RoutedEventArgs e)
-        {
-            wiadomosci.Text += "klikniety small  1 ";
-        }
-
-        private void najwiekszy(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("NAJWIEKSZY !!!!!!!!!!!!");
         }
     }
 }
