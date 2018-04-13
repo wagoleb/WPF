@@ -7,22 +7,22 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1200">
-    <Grid Name="DefaultGrid">
+    <Grid Name="DefaultGrid" Cursor="SizeAll">
         <Grid.RowDefinitions>
             <RowDefinition Height="286*"/>
             <RowDefinition Height="283*"/>
         </Grid.RowDefinitions>
 
-        <Button xaml:Name="Button1" Margin="10,10,0,0" Content="Click Me !" VerticalAlignment="Top" HorizontalAlignment="Left" Height="48" Width="173" Click="Button1_Click" />
-        <Label xaml:Name="labelText" Content="Label content" Margin="10,248,979,0" BorderThickness="1" BorderBrush="Black" VerticalAlignment="Top"/>
+        <Button xaml:Name="Button1" Margin="10,10,0,0" Content="Click Me !" VerticalAlignment="Top" HorizontalAlignment="Left" Height="28" Width="173" Click="Button1_Click" />
+        <Label xaml:Name="labelText" Content="Label content" Margin="188,10,801,0" BorderThickness="1" BorderBrush="Black" VerticalAlignment="Top"/>
 
-        <Button xaml:Name="BigOne" HorizontalAlignment="Left" Margin="593,66,0,0" VerticalAlignment="Top" Width="378" Height="300" Grid.RowSpan="2">
+        <Button xaml:Name="BigOne" Click="najwiekszy" HorizontalAlignment="Left" Margin="13,43,0,0" VerticalAlignment="Top" Width="378" Height="79">
             <Grid Height="70" Width="127">
-                <Button xaml:Name="Small1" Content="Button" Width="50" Height="50" Click="clickOnSMall1"/>
-                <Button xaml:Name="Small2" Content="Button" Margin="-109,103,128,-94" Click="clickOnSmall2"/>
+                <Button xaml:Name="Small1" Content="Button" Width="50" Height="50" Click="clickOnSMall1" Margin="-112,10,189,10"/>
+                <Button xaml:Name="Small2" Content="Button" Margin="132,10,-113,10" Click="clickOnSmall2"/>
             </Grid>
         </Button>
-        <TextBox xaml:Name="wiadomosci" HorizontalAlignment="Left" Height="93" Margin="593,144,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489"/>
+        <TextBox xaml:Name="wiadomosci" HorizontalAlignment="Left" Height="93" Margin="396,43,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="786" BorderThickness="5"/>
 
     </Grid>
 </Window>

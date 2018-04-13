@@ -41,12 +41,17 @@ namespace WpfApp1
 
         private void clickOnSmall2(object sender, RoutedEventArgs e)
         {
-            wiadomosci.Text += "klikniety small  2";
+            wiadomosci.Text += "klikniety small  2 ";
         }
 
         private void clickOnSMall1(object sender, RoutedEventArgs e)
         {
-            wiadomosci.Text += "klikniety small  1";
+            wiadomosci.Text += "klikniety small  1 ";
+        }
+
+        private void najwiekszy(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("NAJWIEKSZY !!!!!!!!!!!!");
         }
     }
 }
