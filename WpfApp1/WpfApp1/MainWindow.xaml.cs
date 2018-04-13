@@ -26,6 +26,10 @@ namespace WpfApp1
         {
             InitializeComponent();
             counter = 0;
+
+            Button a = new Button();
+            a.Content = "Testowy";
+            DefaultGrid.Children.Add(a);
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
