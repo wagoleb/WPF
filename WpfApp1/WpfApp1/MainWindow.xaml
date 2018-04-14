@@ -8,6 +8,17 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <Canvas>
-        
+        <Button Content="Button" Canvas.Left="116" Canvas.Top="88" Width="76"/>
+        <CheckBox Content="CheckBox" Canvas.Left="116" Canvas.Top="113"/>
+        <CheckBox Content="CheckBox" Canvas.Left="116" Canvas.Top="153"/>
+        <CheckBox Content="CheckBox" Canvas.Left="116" Canvas.Top="133"/>
+        <ComboBox Canvas.Left="116" Canvas.Top="173" Width="120">
+            sdf
+            asd
+        </ComboBox>
+        <ListBox Height="100" Canvas.Left="116" Canvas.Top="200" Width="100">
+            Value ???
+        </ListBox>
+
     </Canvas>
 </Window>
