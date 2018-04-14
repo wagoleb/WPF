@@ -7,7 +7,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <UniformGrid>
-        
+    <UniformGrid Columns="3" Rows="3" Name="siatka">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+        <Button>Four</Button>
+        <Button>Five</Button>
+        <TextBox Name="kolumny" Width="20" Height="20" DataContext="3" Text="3"></TextBox>
+        <Button Click="Button_Click">Zmien</Button>
     </UniformGrid>
 </Window>

@@ -24,5 +24,10 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            siatka.Columns = Convert.ToInt32(kolumny.Text);
+        }
     }
 }
