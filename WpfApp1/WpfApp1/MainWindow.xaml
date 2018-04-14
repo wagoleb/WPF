@@ -8,6 +8,11 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <Grid>
-
+        <Expander Header="Expander 1" Padding="5">
+            <StackPanel>
+                <TextBlock>Opcja 1</TextBlock>
+                <TextBlock>Opcja druga.</TextBlock>
+            </StackPanel>
+        </Expander>
     </Grid>
 </Window>
