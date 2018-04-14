@@ -9,7 +9,7 @@
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto">
-            <TextBlock Name="piosenka" />
+            <TextBlock Name="piosenka" Padding="20"/>
         </ScrollViewer>
     </Grid>
 </Window>
