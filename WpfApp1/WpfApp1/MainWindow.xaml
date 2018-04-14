@@ -7,35 +7,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <StackPanel Margin="5">
-        <Label FontWeight="Bold">Ile grasz dziennie ?</Label>
-        <RadioButton GroupName="granie">wcale</RadioButton>
-        <RadioButton GroupName="granie">1 - 3h</RadioButton>
-        <RadioButton GroupName="granie">wiecej niz 3h</RadioButton>
-        
-        <Label FontWeight="Bold">Ile spisz dziennie ?</Label>
-        <RadioButton GroupName="spanie">wcale</RadioButton>
-        <RadioButton GroupName="spanie">1 - 3h</RadioButton>
-        <RadioButton GroupName="spanie">wiecej niz 3h</RadioButton>
-            
-        <GroupBox Header="PYTANIE 3">
-            <StackPanel>
-                <Label FontWeight="Bold">Ile pracujesz dziennie ?</Label>
-                <RadioButton>wcale</RadioButton>
-                <RadioButton>1 - 3h</RadioButton>
-                <RadioButton>wiecej niz 3h</RadioButton>
-            </StackPanel>
-        </GroupBox>
-        <GroupBox>
-            <GroupBox.Header>
-                <Bold>Pytanie 4</Bold>
-            </GroupBox.Header>
-            <StackPanel>
-                <Label FontWeight="Bold">Ile nie pracujesz dziennie ?</Label>
-                <RadioButton>wcale</RadioButton>
-                <RadioButton>1 - 3h</RadioButton>
-                <RadioButton>wiecej niz 3h</RadioButton>
-            </StackPanel>
-        </GroupBox>
+    <StackPanel>
+        <TextBox Margin="5" Name="do_skopiowania">Wprowadz tekst...</TextBox>
+        <TextBlock Margin="5" Text="{Binding ElementName=do_skopiowania, Path=Text}"></TextBlock>
+        <TextBlock Name="second" Margin="5" Text="{Binding Text, ElementName=do_skopiowania, Mode=Default}"></TextBlock>
+        <Button Margin="5" Click="Button_Click">Change text in second text block</Button>
+
+        <Slider Margin="5" Minimum="0" Maximum="100" Value="{Binding ElementName=sourceValue, Path=Text, Mode=OneWayToSource}" IsSnapToTickEnabled="True" TickFrequency="10"></Slider>
+        <TextBox Name="sourceValue" Text="0"></TextBox>
     </StackPanel>
 </Window>
