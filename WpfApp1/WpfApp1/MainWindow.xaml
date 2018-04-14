@@ -8,12 +8,5 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <TextBox Margin="5" Name="do_skopiowania">Wprowadz tekst...</TextBox>
-        <TextBlock Margin="5" Text="{Binding ElementName=do_skopiowania, Path=Text}"></TextBlock>
-        <TextBlock Name="second" Margin="5" Text="{Binding Text, ElementName=do_skopiowania, Mode=Default}"></TextBlock>
-        <Button Margin="5" Click="Button_Click">Change text in second text block</Button>
-
-        <Slider Margin="5" Minimum="0" Maximum="100" Value="{Binding ElementName=sourceValue, Path=Text, Mode=OneWayToSource}" IsSnapToTickEnabled="True" TickFrequency="10"></Slider>
-        <TextBox Name="sourceValue" Text="0"></TextBox>
     </StackPanel>
 </Window>
