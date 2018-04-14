@@ -8,6 +8,8 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <Grid>
-        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <TextBlock Name="piosenka" />
+        </ScrollViewer>
     </Grid>
 </Window>
