@@ -7,15 +7,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <Window.Background>
-        <SolidColorBrush Color="{DynamicResource {xaml:Static SystemColors.ActiveCaptionColorKey}}"/>
-    </Window.Background>
-    <DockPanel>
-        <Button DockPanel.Dock="Top">Top</Button>
-        <Button DockPanel.Dock="Bottom">Bottom</Button>
-        <Button DockPanel.Dock="Left">Left</Button>
-        <Button DockPanel.Dock="Right">Right</Button>
-        <Button DockPanel.Dock="Left">Center</Button>
+    <Canvas>
         
-    </DockPanel>
+    </Canvas>
 </Window>
