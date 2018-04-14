@@ -7,15 +7,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" MinHeight="100"/>
-            <RowDefinition Height="3*" MinHeight="200"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock >TEXT BLOCK 1</TextBlock>
-        <TextBlock Grid.Row="1">Text block 2</TextBlock>
-
-        <GridSplitter Grid.Row="1" Background="Red" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-    </Grid>
+    <UniformGrid>
+        
+    </UniformGrid>
 </Window>
