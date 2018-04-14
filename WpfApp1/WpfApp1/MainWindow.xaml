@@ -7,12 +7,35 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <Grid>
-        <Expander Header="Expander 1" Padding="5">
+    <StackPanel Margin="5">
+        <Label FontWeight="Bold">Ile grasz dziennie ?</Label>
+        <RadioButton GroupName="granie">wcale</RadioButton>
+        <RadioButton GroupName="granie">1 - 3h</RadioButton>
+        <RadioButton GroupName="granie">wiecej niz 3h</RadioButton>
+        
+        <Label FontWeight="Bold">Ile spisz dziennie ?</Label>
+        <RadioButton GroupName="spanie">wcale</RadioButton>
+        <RadioButton GroupName="spanie">1 - 3h</RadioButton>
+        <RadioButton GroupName="spanie">wiecej niz 3h</RadioButton>
+            
+        <GroupBox Header="PYTANIE 3">
             <StackPanel>
-                <TextBlock>Opcja 1</TextBlock>
-                <TextBlock>Opcja druga.</TextBlock>
+                <Label FontWeight="Bold">Ile pracujesz dziennie ?</Label>
+                <RadioButton>wcale</RadioButton>
+                <RadioButton>1 - 3h</RadioButton>
+                <RadioButton>wiecej niz 3h</RadioButton>
             </StackPanel>
-        </Expander>
-    </Grid>
+        </GroupBox>
+        <GroupBox>
+            <GroupBox.Header>
+                <Bold>Pytanie 4</Bold>
+            </GroupBox.Header>
+            <StackPanel>
+                <Label FontWeight="Bold">Ile nie pracujesz dziennie ?</Label>
+                <RadioButton>wcale</RadioButton>
+                <RadioButton>1 - 3h</RadioButton>
+                <RadioButton>wiecej niz 3h</RadioButton>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </Window>
