@@ -7,10 +7,10 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500" Background="#FFEA0E0E">
-    <StackPanel Orientation="Vertical" Width="100" HorizontalAlignment="Left">
+    <WrapPanel Orientation="Horizontal" Width="140" HorizontalAlignment="Left">
         <Button Width="70">RED</Button>
         <Button Width="70">BLUE</Button>
         <Button Width="70">YELLOW</Button>
         <Button Width="70" >GREEN</Button>
-    </StackPanel>
+    </WrapPanel>
 </Window>
