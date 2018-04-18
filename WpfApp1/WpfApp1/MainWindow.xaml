@@ -8,7 +8,10 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <GroupBox Header="Pytanie 1" Margin="3" FontWeight="Bold">
+        <GroupBox Margin="3">
+            <GroupBox.Header>
+                <Bold>Pytanie 1</Bold>
+            </GroupBox.Header>
             <StackPanel>
                 <RadioButton>1 - 3</RadioButton>
                 <RadioButton>3 - 6</RadioButton>
@@ -16,15 +19,18 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Pytanie 2" Margin="3" FontWeight="Bold">
+        <GroupBox Margin="3">
+            <GroupBox.Header>
+                <Bold>Pytanie 2</Bold>
+            </GroupBox.Header>
             <StackPanel>
                 <RadioButton>1 - 3</RadioButton>
                 <RadioButton>3 - 6</RadioButton>
                 <RadioButton>24h/d</RadioButton>
-                <RadioButton>
+                <RadioButton x:Name="more">
                     <WrapPanel>
                         <Label>Inne :</Label>
-                        <TextBox MinWidth="50"></TextBox>
+                        <TextBox MinWidth="50" IsEnabled="{Binding ElementName=more, Path=IsChecked}"></TextBox>
                     </WrapPanel>
                 </RadioButton>
             </StackPanel>
