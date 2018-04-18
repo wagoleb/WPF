@@ -8,34 +8,41 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <GroupBox Margin="3">
-            <GroupBox.Header>
-                <Bold>Pytanie 1</Bold>
-            </GroupBox.Header>
+        <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5">
+            Pokaz ankiete
+        </ToggleButton>
+        <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
             <StackPanel>
-                <RadioButton>1 - 3</RadioButton>
-                <RadioButton>3 - 6</RadioButton>
-                <RadioButton>24h/d</RadioButton>
-            </StackPanel>
-        </GroupBox>
+                <GroupBox Margin="3">
+                    <GroupBox.Header>
+                        <Bold>Pytanie 1</Bold>
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <RadioButton>1 - 3</RadioButton>
+                        <RadioButton>3 - 6</RadioButton>
+                        <RadioButton>24h/d</RadioButton>
+                    </StackPanel>
+                </GroupBox>
 
-        <GroupBox Margin="3">
-            <GroupBox.Header>
-                <Bold>Pytanie 2</Bold>
-            </GroupBox.Header>
-            <StackPanel>
-                <RadioButton>1 - 3</RadioButton>
-                <RadioButton>3 - 6</RadioButton>
-                <RadioButton>24h/d</RadioButton>
-                <RadioButton x:Name="more">
-                    <WrapPanel>
-                        <Label x:Name="start">Inne :</Label>
-                        <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Left" PlacementTarget="{Binding ElementName=start}" PopupAnimation="Fade" AllowsTransparency="True">
-                            <TextBox MinWidth="50"></TextBox>
-                        </Popup>
-                    </WrapPanel>
-                </RadioButton>
+                <GroupBox Margin="3">
+                    <GroupBox.Header>
+                        <Bold>Pytanie 2</Bold>
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <RadioButton>1 - 3</RadioButton>
+                        <RadioButton>3 - 6</RadioButton>
+                        <RadioButton>24h/d</RadioButton>
+                        <RadioButton x:Name="more">
+                            <WrapPanel>
+                                <Label x:Name="start">Inne :</Label>
+                                <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Left" PlacementTarget="{Binding ElementName=start}" PopupAnimation="Fade" AllowsTransparency="True">
+                                    <TextBox MinWidth="50"></TextBox>
+                                </Popup>
+                            </WrapPanel>
+                        </RadioButton>
+                    </StackPanel>
+                </GroupBox>
             </StackPanel>
-        </GroupBox>
+        </Popup>
     </StackPanel>
 </Window>
