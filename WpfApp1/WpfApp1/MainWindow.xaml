@@ -13,7 +13,7 @@
         </ToggleButton>
         <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
             <StackPanel MinWidth="250">
-                <GroupBox Margin="3" Header="Pytanie pierwsze :">
+                <GroupBox Margin="3" Header="Pytanie pierwsze :" Style="{StaticResource wygladHEADERa}">
                     <StackPanel>
                         <RadioButton>1 - 3</RadioButton>
                         <RadioButton>3 - 6</RadioButton>
@@ -21,7 +21,7 @@
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Margin="3" Header="Pytanie drugie :">
+                <GroupBox Margin="3" Header="Pytanie drugie :" Style="{StaticResource wygladHEADERa}">
                     <StackPanel>
                         <RadioButton>1 - 3</RadioButton>
                         <RadioButton>3 - 6</RadioButton>
