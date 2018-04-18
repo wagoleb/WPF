@@ -8,13 +8,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500"
-         DataContext="{StaticResource EditingModes}">
+         >
 
     <DockPanel>
         <StackPanel Width="80">
             <Button Content="Select" Click="selection_Click"/>
             <Button Content="Ink" Click="drawing_Click"/>
         </StackPanel>
-        <InkCanvas EditingMode="{Binding Path=editingMode}"></InkCanvas>
+        <InkCanvas EditingMode="{Binding Path=editingMode, Source={StaticResource EditingModes}}"></InkCanvas>
     </DockPanel>
 </Window>
