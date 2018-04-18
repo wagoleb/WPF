@@ -7,8 +7,20 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-
-    <DockPanel>
-
-    </DockPanel>
+    <StackPanel>
+        <Label>Pytanie 1</Label>
+            <RadioButton GroupName="pytanie1">1 - 3</RadioButton>
+            <RadioButton GroupName="pytanie1">3 - 6</RadioButton>
+            <RadioButton GroupName="pytanie1">24h/d</RadioButton>
+        <Label>Pytanie 2</Label>
+            <RadioButton GroupName="pytanie2">1 - 3</RadioButton>
+            <RadioButton GroupName="pytanie2">3 - 6</RadioButton>
+            <RadioButton GroupName="pytanie2">24h/d</RadioButton>
+            <RadioButton GroupName="pytanie2">
+            <WrapPanel>
+                <Label>Inne : </Label>
+                <TextBox MinWidth="50"></TextBox>
+            </WrapPanel>
+            </RadioButton>
+    </StackPanel>
 </Window>
