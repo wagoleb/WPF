@@ -20,22 +20,10 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        InkEditingMode editingModes = new InkEditingMode();
+
         public MainWindow()
         {
             InitializeComponent();
-
-            this.DataContext = editingModes;
-        }
-
-        private void selection_Click(object sender, RoutedEventArgs e)
-        {
-            editingModes.editingMode = InkCanvasEditingMode.Select;
-        }
-
-        private void drawing_Click(object sender, RoutedEventArgs e)
-        {
-            editingModes.editingMode = InkCanvasEditingMode.Ink;
         }
     }
 }

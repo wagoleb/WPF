@@ -8,10 +8,6 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <DockPanel>
-        <StackPanel Width="80">
-            <Button Content="Select" Click="selection_Click"/>
-            <Button Content="Ink" Click="drawing_Click"/>
-        </StackPanel>
-        <InkCanvas EditingMode="{Binding Path=editingMode}"></InkCanvas>
+
     </DockPanel>
 </Window>
