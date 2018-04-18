@@ -7,9 +7,33 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
+    <Window.Resources>
+        <Style TargetType="ToggleButton" x:Key="OnOff">
+            <Setter Property="Content" Value="OFF" />
+            <Setter Property="Background" Value="red" />
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="ON" />
+                    <Setter Property="Background" Value="Yellow" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <StackPanel>
+        <ToggleButton Style="{StaticResource OnOff}" IsChecked="False"/>
         <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5" Checked="przelacznik_Checked">
-            Pokaz ankiete
+            <ToggleButton.Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="False" >
+                            <Setter Property="Content" Value="Pokaż AAAA......" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True" >
+                            <Setter Property="Content" Value="sdfgsdfgsdfgsdg." />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
         </ToggleButton>
         <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
             <StackPanel MinWidth="250">
