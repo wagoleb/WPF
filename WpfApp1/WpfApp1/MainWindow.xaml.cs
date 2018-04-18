@@ -25,5 +25,10 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void przelacznik_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

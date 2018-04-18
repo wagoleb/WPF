@@ -8,19 +8,19 @@
         mc:Ignorable="d"
         Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5">
+        <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5" Checked="przelacznik_Checked">
             Pokaz ankiete
         </ToggleButton>
         <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
-            <StackPanel>
+            <StackPanel MinWidth="250">
                 <GroupBox Margin="3">
                     <GroupBox.Header>
                         <Bold>Pytanie 1</Bold>
                     </GroupBox.Header>
                     <StackPanel>
-                        <RadioButton>1 - 3</RadioButton>
-                        <RadioButton>3 - 6</RadioButton>
-                        <RadioButton>24h/d</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">1 - 3</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">3 - 6</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center" >24h/d</RadioButton>
                     </StackPanel>
                 </GroupBox>
 
@@ -29,13 +29,13 @@
                         <Bold>Pytanie 2</Bold>
                     </GroupBox.Header>
                     <StackPanel>
-                        <RadioButton>1 - 3</RadioButton>
-                        <RadioButton>3 - 6</RadioButton>
-                        <RadioButton>24h/d</RadioButton>
-                        <RadioButton x:Name="more">
-                            <WrapPanel>
-                                <Label x:Name="start">Inne :</Label>
-                                <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Left" PlacementTarget="{Binding ElementName=start}" PopupAnimation="Fade" AllowsTransparency="True">
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">1 - 3</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">3 - 6</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">24h/d</RadioButton>
+                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center" x:Name="more" HorizontalAlignment="Left">
+                            <WrapPanel x:Name="wpanel">
+                                <Label>Inne :</Label>
+                                <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Right" PlacementTarget="{Binding ElementName=wpanel}" PopupAnimation="Fade" AllowsTransparency="True">
                                     <TextBox MinWidth="50"></TextBox>
                                 </Popup>
                             </WrapPanel>

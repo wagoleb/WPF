@@ -5,6 +5,8 @@
              xmlns:lokalna="clr-namespace:INotifyPropertychangedOrazInkCanvas"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
+        <Style TargetType="{x:Type GroupBox}">
+            
+        </Style>
     </Application.Resources>
 </Application>
