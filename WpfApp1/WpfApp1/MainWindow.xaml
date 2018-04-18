@@ -7,12 +7,10 @@
         xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <Window.Resources>
-        <lokalna:InkEditingMode x:Key="EditingModes"/>
-        <!-- InkEditingMode inkEditingMode = new InkEditingMode(); -->
-    </Window.Resources>
-    <DockPanel DataContext="{StaticResource EditingModes}">
+        Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500"
+         DataContext="{StaticResource EditingModes}">
+
+    <DockPanel>
         <StackPanel Width="80">
             <Button Content="Select" Click="selection_Click"/>
             <Button Content="Ink" Click="drawing_Click"/>
