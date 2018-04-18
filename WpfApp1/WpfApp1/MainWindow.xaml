@@ -6,7 +6,7 @@
         xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
+        Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
     <StackPanel>
         <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5" Checked="przelacznik_Checked">
             Pokaz ankiete

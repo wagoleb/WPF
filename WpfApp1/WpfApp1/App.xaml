@@ -11,7 +11,14 @@
             <Setter Property="HeaderTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="LightPink" Background="DarkBlue" FontWeight="ExtraLight"/>
+                        <TextBlock Text="{Binding}" Foreground="LightPink" FontWeight="ExtraLight">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FFD41B1B" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+                        </TextBlock>
                     </DataTemplate>
                 </Setter.Value>
             </Setter>
