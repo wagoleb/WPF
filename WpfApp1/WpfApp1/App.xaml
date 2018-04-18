@@ -6,7 +6,21 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="{x:Type GroupBox}">
-            
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="LightPink" Background="DarkBlue" FontWeight="ExtraLight"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="DarkCyan" />
         </Style>
     </Application.Resources>
 </Application>

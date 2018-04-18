@@ -13,26 +13,20 @@
         </ToggleButton>
         <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
             <StackPanel MinWidth="250">
-                <GroupBox Margin="3">
-                    <GroupBox.Header>
-                        <Bold>Pytanie 1</Bold>
-                    </GroupBox.Header>
+                <GroupBox Margin="3" Header="Pytanie pierwsze :">
                     <StackPanel>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">1 - 3</RadioButton>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">3 - 6</RadioButton>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center" >24h/d</RadioButton>
+                        <RadioButton>1 - 3</RadioButton>
+                        <RadioButton>3 - 6</RadioButton>
+                        <RadioButton>24h/d</RadioButton>
                     </StackPanel>
                 </GroupBox>
 
-                <GroupBox Margin="3">
-                    <GroupBox.Header>
-                        <Bold>Pytanie 2</Bold>
-                    </GroupBox.Header>
+                <GroupBox Margin="3" Header="Pytanie drugie :">
                     <StackPanel>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">1 - 3</RadioButton>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">3 - 6</RadioButton>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center">24h/d</RadioButton>
-                        <RadioButton Margin="1" Padding="1" VerticalContentAlignment="Center" x:Name="more" HorizontalAlignment="Left">
+                        <RadioButton>1 - 3</RadioButton>
+                        <RadioButton>3 - 6</RadioButton>
+                        <RadioButton>24h/d</RadioButton>
+                        <RadioButton x:Name="more" HorizontalAlignment="Left">
                             <WrapPanel x:Name="wpanel">
                                 <Label>Inne :</Label>
                                 <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Right" PlacementTarget="{Binding ElementName=wpanel}" PopupAnimation="Fade" AllowsTransparency="True">
@@ -42,6 +36,7 @@
                         </RadioButton>
                     </StackPanel>
                 </GroupBox>
+
             </StackPanel>
         </Popup>
     </StackPanel>
