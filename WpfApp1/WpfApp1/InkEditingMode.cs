@@ -32,7 +32,7 @@ namespace INotifyPropertychangedOrazInkCanvas
 
         public InkEditingMode()
         {
-            this.editingMode = InkCanvasEditingMode.Ink;
+            // this.editingMode = InkCanvasEditingMode.Ink;
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
