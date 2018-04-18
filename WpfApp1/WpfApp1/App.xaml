@@ -8,6 +8,7 @@
         <Style TargetType="{x:Type GroupBox}" x:Key="wygladHEADERa">
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="BorderThickness" Value="2" />
             <Setter Property="HeaderTemplate">
                 <Setter.Value>
                     <DataTemplate>
