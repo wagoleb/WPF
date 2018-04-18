@@ -5,7 +5,6 @@
              xmlns:lokalna="clr-namespace:INotifyPropertychangedOrazInkCanvas"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-            <lokalna:InkEditingMode x:Key="EditingModes" editingMode="EraseByPoint"/>
-            <!-- InkEditingMode inkEditingMode = new InkEditingMode(); -->
+
     </Application.Resources>
 </Application>
