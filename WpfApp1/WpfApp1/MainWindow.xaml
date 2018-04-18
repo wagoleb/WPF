@@ -29,8 +29,10 @@
                 <RadioButton>24h/d</RadioButton>
                 <RadioButton x:Name="more">
                     <WrapPanel>
-                        <Label>Inne :</Label>
-                        <TextBox MinWidth="50" IsEnabled="{Binding ElementName=more, Path=IsChecked}"></TextBox>
+                        <Label x:Name="start">Inne :</Label>
+                        <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Left" PlacementTarget="{Binding ElementName=start}" PopupAnimation="Fade" AllowsTransparency="True">
+                            <TextBox MinWidth="50"></TextBox>
+                        </Popup>
                     </WrapPanel>
                 </RadioButton>
             </StackPanel>
