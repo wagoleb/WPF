@@ -3,11 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lokalna="clr-namespace:INotifyPropertychangedOrazInkCanvas"
         xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500">
-    <DockPanel>
+        Title="Layout" Height="600" Width="900" MinHeight="500" MinWidth="500"
+         >
 
+    <DockPanel>
+        <StackPanel Width="80">
+            <Button Content="Select" Click="selection_Click"/>
+            <Button Content="Ink" Click="drawing_Click"/>
+        </StackPanel>
+        <InkCanvas EditingMode="{Binding Path=editingMode, Source={StaticResource EditingModes}}"></InkCanvas>
     </DockPanel>
 </Window>

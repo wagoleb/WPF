@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace WpfApp1
+namespace INotifyPropertychangedOrazInkCanvas
 {
     class InkEditingMode : INotifyPropertyChanged
     {
@@ -32,7 +32,7 @@ namespace WpfApp1
 
         public InkEditingMode()
         {
-            this.editingMode = InkCanvasEditingMode.Ink;
+            // this.editingMode = InkCanvasEditingMode.Ink;
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
