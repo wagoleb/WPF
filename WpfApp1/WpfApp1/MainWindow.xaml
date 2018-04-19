@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:konwerter="clr-namespace:NSBoolToVisibilityConverter"
         xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
@@ -18,10 +19,14 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- dodanie zasobu z konwertera-->
+        <konwerter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
     </Window.Resources>
     <StackPanel>
-        <ToggleButton Style="{StaticResource OnOff}" IsChecked="False"/>
-        <ToggleButton IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" x:Name="przelacznik" Margin="5" Checked="przelacznik_Checked">
+        <!--<ToggleButton Style="{StaticResource OnOff}" IsChecked="False"/>-->
+        <ToggleButton x:Name="przelacznik" Margin="5" Checked="przelacznik_Checked">
             <ToggleButton.Style>
                 <Style TargetType="{x:Type ToggleButton}">
                     <Style.Triggers>
@@ -35,33 +40,33 @@
                 </Style>
             </ToggleButton.Style>
         </ToggleButton>
-        <Popup x:Name="ankieta"  AllowsTransparency="True" PlacementTarget="{Binding ElementName=przelacznik}">
-            <StackPanel MinWidth="250">
-                <GroupBox Margin="3" Header="Pytanie pierwsze :" Style="{StaticResource wygladHEADERa}">
-                    <StackPanel>
-                        <RadioButton>1 - 3</RadioButton>
-                        <RadioButton>3 - 6</RadioButton>
-                        <RadioButton>24h/d</RadioButton>
-                    </StackPanel>
-                </GroupBox>
 
-                <GroupBox Margin="3" Header="Pytanie drugie :" Style="{StaticResource wygladHEADERa}">
-                    <StackPanel>
-                        <RadioButton>1 - 3</RadioButton>
-                        <RadioButton>3 - 6</RadioButton>
-                        <RadioButton>24h/d</RadioButton>
-                        <RadioButton x:Name="more" HorizontalAlignment="Left">
-                            <WrapPanel x:Name="wpanel">
-                                <Label>Inne :</Label>
-                                <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Right" PlacementTarget="{Binding ElementName=wpanel}" PopupAnimation="Fade" AllowsTransparency="True">
-                                    <TextBox MinWidth="50"></TextBox>
-                                </Popup>
-                            </WrapPanel>
-                        </RadioButton>
-                    </StackPanel>
-                </GroupBox>
+        <StackPanel MinWidth="250" Visibility="{Binding ElementName=przelacznik, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}">
+            <GroupBox Margin="3" Header="Pytanie pierwsze :" Style="{StaticResource wygladHEADERa}">
+                <StackPanel>
+                    <RadioButton>1 - 3</RadioButton>
+                    <RadioButton>3 - 6</RadioButton>
+                    <RadioButton>24h/d</RadioButton>
+                </StackPanel>
+            </GroupBox>
 
-            </StackPanel>
-        </Popup>
+            <GroupBox Margin="3" Header="Pytanie drugie :" Style="{StaticResource wygladHEADERa}">
+                <StackPanel>
+                    <RadioButton>1 - 3</RadioButton>
+                    <RadioButton>3 - 6</RadioButton>
+                    <RadioButton>24h/d</RadioButton>
+                    <RadioButton x:Name="more" HorizontalAlignment="Left">
+                        <WrapPanel x:Name="wpanel">
+                            <Label>Inne :</Label>
+                            <Popup IsOpen="{Binding ElementName=more, Path=IsChecked}" Placement="Right" PlacementTarget="{Binding ElementName=wpanel}" PopupAnimation="Fade" AllowsTransparency="True">
+                                <TextBox MinWidth="50"></TextBox>
+                            </Popup>
+                        </WrapPanel>
+                    </RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center">AFSASFASDFAS</TextBlock>
     </StackPanel>
 </Window>
