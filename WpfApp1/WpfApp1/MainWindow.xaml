@@ -5,23 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
-    <StackPanel>
-        <StackPanel.Resources>
-            <Style TargetType="{x:Type TextBox}">
-                <Style.Triggers>
-                    <MultiTrigger>
-                        <MultiTrigger.Conditions>
-                            <Condition Property="IsKeyboardFocused" Value="True" />
-                            <Condition Property="IsMouseOver" Value="True" />
-                        </MultiTrigger.Conditions>
-                        <Setter Property="Background" Value="Yellow" />
-                    </MultiTrigger>
-                </Style.Triggers>
-            </Style>
-        </StackPanel.Resources>
-        <TextBox>Test</TextBox>
-        <TextBox>Test</TextBox>
-        <TextBox>Test</TextBox>
-
-    </StackPanel>
+   
 </Window>
