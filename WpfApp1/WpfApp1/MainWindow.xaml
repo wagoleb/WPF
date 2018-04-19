@@ -65,7 +65,6 @@
                     </RadioButton>
                 </StackPanel>
             </GroupBox>
-
         </StackPanel>
         <TextBlock HorizontalAlignment="Center">AFSASFASDFAS</TextBlock>
     </StackPanel>
