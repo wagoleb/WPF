@@ -56,7 +56,30 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-            <TextBlock Padding="5" Text="tekst z border'a" />
+            <TextBlock Padding="5" Text="tekst z border'a" Background="DarkCyan">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}" >
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True" >
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="Background" To="Blue" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="Background" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
         </Border>
 
 
