@@ -88,7 +88,7 @@
                 Storyboard.TargetProperty="Width" 
                 Duration="0:0:5" From="100" To="500">
                                     <DoubleAnimation.EasingFunction>
-                                        <BounceEase EasingMode="EaseInOut" />
+                                        <ElasticEase EasingMode="EaseInOut" />
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
                             </Storyboard>
