@@ -19,7 +19,7 @@
                         <Setter Property="Source" Value="C:\repos\WPF\WpfApp1\WpfApp1\unavailable.png" />
                     </DataTrigger>
                     <DataTrigger Binding="{Binding Path=isFound}" Value="True">
-                        <Setter Property="Source" Value="C:\repos\WPF\WpfApp1\WpfApp1\unavailable.png" />
+                        <Setter Property="Source" Value="{Binding Path=pathToImage}" />
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
