@@ -86,7 +86,11 @@
                                 <DoubleAnimation 
                 Storyboard.TargetName="myRectangle" 
                 Storyboard.TargetProperty="Width" 
-                Duration="0:0:5" From="100" To="500" />
+                Duration="0:0:5" From="100" To="500">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BounceEase EasingMode="EaseInOut" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
