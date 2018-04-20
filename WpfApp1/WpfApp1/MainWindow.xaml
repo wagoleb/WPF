@@ -3,9 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:obrazki="clr-namespace:MyImages"
         mc:Ignorable="d"
-        Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
+        Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
-     
+        <StackPanel.Resources>
+            <obrazki:MyImages x:Key="image1" isFound="True" />
+            <obrazki:MyImages x:Key="image2" isFound="False" />
+            <obrazki:MyImages x:Key="image3" isFound="True" />
+
+            <Style TargetType="{x:Type Image}" x:Key="obrazek">
+                <Setter Property="Width" Value="70" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=isFound}" Value="False">
+                        <Setter Property="Source" Value="C:\repos\WPF\WpfApp1\WpfApp1\unavailable.png" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Path=isFound}" Value="True">
+                        <Setter Property="Source" Value="C:\repos\WPF\WpfApp1\WpfApp1\unavailable.png" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </StackPanel.Resources>
+        
+        <Image DataContext="{StaticResource image1}" Style="{StaticResource obrazek}"/>
+        <Image DataContext="{StaticResource image2}" Style="{StaticResource obrazek}"/>
+        <Image DataContext="{StaticResource image3}" Style="{StaticResource obrazek}"/>
+        
     </StackPanel>
 </Window>
