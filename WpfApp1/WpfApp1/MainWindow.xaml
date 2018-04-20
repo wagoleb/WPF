@@ -56,7 +56,7 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-            <TextBlock Padding="5" Text="tekst z border'a" Background="DarkCyan">
+            <TextBlock Padding="5" Text="tekst z border'a" Background="White">
                 <TextBlock.Style>
                     <Style TargetType="{x:Type TextBlock}" >
                         <Style.Triggers>
@@ -64,14 +64,22 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="Background" To="Blue" />
+                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="(TextBlock.Background).(SolidColorBrush.Color)" To="Blue" >
+                                                <ColorAnimation.EasingFunction>
+                                                    <BounceEase EasingMode="EaseInOut" />
+                                                </ColorAnimation.EasingFunction>
+                                            </ColorAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="Background" />
+                                            <ColorAnimation Duration="0:0:0.400" Storyboard.TargetProperty="(TextBlock.Background).(SolidColorBrush.Color)">
+                                                <ColorAnimation.EasingFunction>
+                                                    <ElasticEase EasingMode="EaseInOut" />
+                                                </ColorAnimation.EasingFunction>
+                                            </ColorAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
