@@ -4,65 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:obrazki="clr-namespace:MyImagesNS"
+        xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <!--
-        <StackPanel.Resources>
-            <Style TargetType="{x:Type Image}" x:Key="obrazek">
-                <Setter Property="Width" Value="70" />
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Path=isFound}" Value="False">
-                        <Setter Property="Source" Value="C:\repos\WPF\WpfApp1\WpfApp1\unavailable.png" />
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding Path=isFound}" Value="True">
-                        <Setter Property="Source" Value="{Binding Path=pathToImage}" />
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-            <Style TargetType="{x:Type TextBlock}" x:Key="opisObrazka">
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Path=isFound}" Value="True">
-                        <Setter Property="Text" Value="{Binding Path=nameOfImage}" />
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding Path=isFound}" Value="False">
-                        <Setter Property="Text" Value="Takiego obrazka nie ma !" />
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </StackPanel.Resources>
-        -->
-        <!-- 
-        <Image Style="{StaticResource obrazek}"/>
-        <Image Style="{StaticResource obrazek}"/>
-        <Image Style="{StaticResource obrazek}"/>
-        -->
-        <Border BorderThickness="1" BorderBrush="Black">
-            <ItemsControl ItemsSource="{Binding}" Padding="1">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <Image x:Name="picture" Width="70"/>
-                            <TextBlock x:Name="desc"  HorizontalAlignment="Center" />
-                        </StackPanel>
-                        <DataTemplate.Triggers>
-                            <DataTrigger Binding="{Binding Path=isFound}" Value="False">
-                                <Setter Property="Source" Value="unavailable.png" TargetName="picture" />
-                                <Setter Property="Text" Value="Takiego obrazka nie ma !" TargetName="desc" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding Path=isFound}" Value="True">
-                                <Setter Property="Source" Value="{Binding Path=pathToImage}"  TargetName="picture" />
-                                <Setter Property="Text" Value="{Binding Path=nameOfImage}" TargetName="desc" />
-                            </DataTrigger>
-                        </DataTemplate.Triggers>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </Border>
+        <local:ImagesWithTitles Background="Chartreuse" szerokosc="350"/>
+        <local:ImagesWithTitles />
+        <local:ImagesWithTitles />
     </StackPanel>
 </Window>
