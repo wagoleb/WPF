@@ -24,17 +24,15 @@ namespace WpfApp1
             }
         }
 
-        private List<MyImages> _imagesPaths;
-
         public List<MyImages> ImagesPathes
         {
             get
             {
-                return this._imagesPaths;
+                return (List<MyImages>)GetValue(ImagesPathesProperty);
             }
             set
             {
-                this._imagesPaths = value;
+                SetValue(ImagesPathesProperty, value);
             }
         }
 
@@ -42,13 +40,28 @@ namespace WpfApp1
             "ImagesPathes", // wyslana nazwa property
             typeof(List<MyImages>), //typ 
             typeof(ImagesWithTitles),
-            new FrameworkPropertyMetadata(null, new PropertyChangedCallback((s, e) => 
+            new FrameworkPropertyMetadata(null, new PropertyChangedCallback((s, e) =>
                 {
                     var source = s as ImagesWithTitles;
                     source.itemsCControl.ItemsSource = (List<MyImages>)e.NewValue;
                 }
     ))
             );
+
+
+        /* dep prop z automatu ze snipetu propd
+
+        public List<MyImages> myImages
+        {
+            get { return (List<MyImages>)GetValue(myImagesProperty); }
+            set { SetValue(myImagesProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for myImages.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty myImagesProperty =
+            DependencyProperty.Register("myImages", typeof(List<MyImages>), typeof(ImagesWithTitles), new PropertyMetadata(0));
+
+        */
 
         public ImagesWithTitles()
         {
