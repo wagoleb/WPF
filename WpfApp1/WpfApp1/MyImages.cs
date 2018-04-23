@@ -2,7 +2,7 @@
 
 namespace MyImagesNS
 {
-    class MyImages
+    public class MyImages
     {
         public string pathToImage { get; set; }
         public string nameOfImage { get; set; }
