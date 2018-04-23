@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
+        <!--
         <StackPanel.Resources>
             <Style TargetType="{x:Type Image}" x:Key="obrazek">
                 <Setter Property="Width" Value="70" />
@@ -30,6 +31,7 @@
                 </Style.Triggers>
             </Style>
         </StackPanel.Resources>
+        -->
         <!-- 
         <Image Style="{StaticResource obrazek}"/>
         <Image Style="{StaticResource obrazek}"/>
@@ -39,9 +41,19 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Image Style="{StaticResource obrazek}" />
-                        <TextBlock Style="{StaticResource opisObrazka}"  HorizontalAlignment="Center" />
+                        <Image x:Name="picture" Width="70"/>
+                        <TextBlock x:Name="desc"  HorizontalAlignment="Center" />
                     </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=isFound}" Value="False">
+                            <Setter Property="Source" Value="unavailable.png" TargetName="picture" />
+                            <Setter Property="Text" Value="Takiego obrazka nie ma !" TargetName="desc" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=isFound}" Value="True">
+                            <Setter Property="Source" Value="{Binding Path=pathToImage}"  TargetName="picture" />
+                            <Setter Property="Text" Value="{Binding Path=nameOfImage}" TargetName="desc" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
