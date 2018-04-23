@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
-        <local:ImagesWithTitles Background="Chartreuse" szerokosc="350"/>
-        <local:ImagesWithTitles />
-        <local:ImagesWithTitles />
+        <local:ImagesWithTitles Background="Chartreuse" szerokosc="400" />
+        <local:ImagesWithTitles szerokosc="800" />
+        <local:ImagesWithTitles szerokosc="1200" />
     </StackPanel>
 </Window>
