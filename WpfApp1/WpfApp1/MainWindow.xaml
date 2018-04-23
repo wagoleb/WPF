@@ -37,30 +37,32 @@
         <Image Style="{StaticResource obrazek}"/>
         <Image Style="{StaticResource obrazek}"/>
         -->
-        <ItemsControl ItemsSource="{Binding}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Image x:Name="picture" Width="70"/>
-                        <TextBlock x:Name="desc"  HorizontalAlignment="Center" />
-                    </StackPanel>
-                    <DataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding Path=isFound}" Value="False">
-                            <Setter Property="Source" Value="unavailable.png" TargetName="picture" />
-                            <Setter Property="Text" Value="Takiego obrazka nie ma !" TargetName="desc" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=isFound}" Value="True">
-                            <Setter Property="Source" Value="{Binding Path=pathToImage}"  TargetName="picture" />
-                            <Setter Property="Text" Value="{Binding Path=nameOfImage}" TargetName="desc" />
-                        </DataTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <Border BorderThickness="1" BorderBrush="Black">
+            <ItemsControl ItemsSource="{Binding}" Padding="1">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image x:Name="picture" Width="70"/>
+                            <TextBlock x:Name="desc"  HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Path=isFound}" Value="False">
+                                <Setter Property="Source" Value="unavailable.png" TargetName="picture" />
+                                <Setter Property="Text" Value="Takiego obrazka nie ma !" TargetName="desc" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=isFound}" Value="True">
+                                <Setter Property="Source" Value="{Binding Path=pathToImage}"  TargetName="picture" />
+                                <Setter Property="Text" Value="{Binding Path=nameOfImage}" TargetName="desc" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
     </StackPanel>
 </Window>
