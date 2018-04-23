@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using INotifyPropertychangedOrazInkCanvas;
+using MyImagesNS;
+
 
 namespace WpfApp1
 {
@@ -24,6 +26,14 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+
+            List<MyImages> images = new List<MyImages>();
+
+            images.Add(new MyImages("ubuntu.jpg", "Ubuntu"));
+            images.Add(new MyImages("mint.jpg", "Mint"));
+            images.Add(new MyImages("niema.jpg", "Mint"));
+
+            this.DataContext = images;
         }
     }
 }

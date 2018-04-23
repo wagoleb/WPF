@@ -3,15 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:obrazki="clr-namespace:MyImages"
+        xmlns:obrazki="clr-namespace:MyImagesNS"
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
         <StackPanel.Resources>
-            <obrazki:MyImages x:Key="image1" isFound="True" />
-            <obrazki:MyImages x:Key="image2" isFound="False" />
-            <obrazki:MyImages x:Key="image3" isFound="True" />
-
             <Style TargetType="{x:Type Image}" x:Key="obrazek">
                 <Setter Property="Width" Value="70" />
                 <Style.Triggers>
@@ -23,11 +19,32 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="opisObrazka">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=isFound}" Value="True">
+                        <Setter Property="Text" Value="{Binding Path=nameOfImage}" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Path=isFound}" Value="False">
+                        <Setter Property="Text" Value="Takiego obrazka nie ma !" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
         </StackPanel.Resources>
-        
-        <Image DataContext="{StaticResource image1}" Style="{StaticResource obrazek}"/>
-        <Image DataContext="{StaticResource image2}" Style="{StaticResource obrazek}"/>
-        <Image DataContext="{StaticResource image3}" Style="{StaticResource obrazek}"/>
-        
+        <!-- 
+        <Image Style="{StaticResource obrazek}"/>
+        <Image Style="{StaticResource obrazek}"/>
+        <Image Style="{StaticResource obrazek}"/>
+        -->
+        <ItemsControl ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Style="{StaticResource obrazek}" />
+                        <TextBlock Style="{StaticResource opisObrazka}"  HorizontalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </StackPanel>
 </Window>
