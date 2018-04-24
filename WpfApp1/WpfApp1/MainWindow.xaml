@@ -12,6 +12,14 @@
             <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
         </WrapPanel>
         <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel VerticalAlignment="Center">
+                        <Label Content="Opis : " />
+                        <TextBlock Text="{Binding}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Padding" Value="4" />
