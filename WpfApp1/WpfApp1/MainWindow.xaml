@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
-    <StackPanel>
+    <StackPanel Margin="1,1,1,1">
+        <WrapPanel>
+            <TextBox Margin="1,1,1,1" Width="100" x:Name="noweImie"></TextBox>
+            <Button Margin="1,1,1,1" Click="Button_Click">Dodaj imie do listy</Button>
+            <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
+        </WrapPanel>
         <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
             <ListBoxItem>Element 1</ListBoxItem>
             <ListBoxItem>Element 2</ListBoxItem>
