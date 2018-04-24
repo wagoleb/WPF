@@ -3,63 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:person="clr-namespace:PersonNS"
-        xmlns:obrazki="clr-namespace:MyImagesNS"
-        xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
-
-    <Window.Resources>
-        <person:Person x:Key="osoba1" Sex="Male" Name="Arek"/>
-        <person:Person x:Key="osoba2" Sex="Female" Name="Wiola"/>
-
-        <ControlTemplate TargetType="{x:Type Button}" x:Key="ButtontemplateElipse">
-            <Grid>
-                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}" />
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Fill="Chartreuse" Width="30" Height="20"/>
-                    <TextBlock>
-                <ContentPresenter Content="{Binding}">
-                    <ContentPresenter.ContentTemplate>
-                        <DataTemplate DataType="person:Person">
-                            <TextBlock Text="{Binding Path=Name}" />
-                        </DataTemplate>
-                    </ContentPresenter.ContentTemplate>
-                </ContentPresenter>
-                    </TextBlock>
-                </StackPanel>
-            </Grid>
-            <ControlTemplate.Triggers>
-                <MultiDataTrigger>
-                    <MultiDataTrigger.Conditions>
-                        <Condition Binding="{Binding RelativeSource={RelativeSource Self},Path=IsMouseOver}" Value="True"/>
-                        <Condition Binding="{Binding Path=Sex}" Value="Male" />
-                    </MultiDataTrigger.Conditions>
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="Cursor" Value="Hand" />
-                    <Setter Property="Background" Value="Blue" />
-                </MultiDataTrigger>
-                <MultiDataTrigger>
-                    <MultiDataTrigger.Conditions>
-                        <Condition Binding="{Binding RelativeSource={RelativeSource Self},Path=IsMouseOver}" Value="True"/>
-                        <Condition Binding="{Binding Path=Sex}" Value="Female" />
-                    </MultiDataTrigger.Conditions>
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="Cursor" Value="Hand" />
-                    <Setter Property="Background" Value="Pink" />
-                </MultiDataTrigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-    </Window.Resources>
     <StackPanel>
-        <Button Width="30" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" Template="{StaticResource ButtontemplateElipse}" />
-        <Button Width="50" Height="50" Template="{StaticResource ButtontemplateElipse}" DataContext="{StaticResource osoba1}" />
-        <Button Width="100" Height="100" Template="{StaticResource ButtontemplateElipse}" DataContext="{StaticResource osoba2}" />
-
-        <Button Tag="ZEW">
-            <Button Tag="WEW">
-                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=2}, Path=Tag}"/>
-            </Button>
-        </Button>
+      
     </StackPanel>
 </Window>
