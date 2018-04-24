@@ -12,9 +12,6 @@
             <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
         </WrapPanel>
         <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
-            <ListBoxItem>Element 1</ListBoxItem>
-            <ListBoxItem>Element 2</ListBoxItem>
-            <ListBoxItem>Element 3</ListBoxItem>
         </ListBox>
     </StackPanel>
 </Window>
