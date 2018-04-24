@@ -22,9 +22,11 @@
         </ControlTemplate>
     </Window.Resources>
     <StackPanel>
-        <Button Width="100" Height="50" Template="{StaticResource ButtontemplateElipse}" Content="Test one" />
+        <Button Width="30" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" Template="{StaticResource ButtontemplateElipse}" Content="Test one" />
         <Button Width="50" Height="50" Template="{StaticResource ButtontemplateElipse}" Content="Test two" />
         <Button Width="100" Height="100" Template="{StaticResource ButtontemplateElipse}" Content="Test three"/>
+
+        <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=Title}"/>
     </StackPanel>
        
 </Window>
