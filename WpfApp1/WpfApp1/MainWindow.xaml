@@ -11,16 +11,17 @@
             <Button Margin="1,1,1,1" Click="Button_Click">Dodaj imie do listy</Button>
             <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
         </WrapPanel>
-        <ComboBox SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion" IsEditable="True">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel VerticalAlignment="Center">
-                        <Label Content="Opis : " />
-                        <TextBlock Text="{Binding}" />
-                    </WrapPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-            <ComboBox.ItemContainerStyle>
+        <ListView SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
+            <ListView.View>
+                <GridView AllowsColumnReorder="True" Selector.IsSelected="True">
+                    <GridView.Columns>
+                        <GridViewColumn Header="Number" />
+                        <GridViewColumn Header="Imie" />
+                        <GridViewColumn Header="Age" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Padding" Value="4" />
                     <Style.Triggers>
@@ -34,7 +35,7 @@
                         </MultiTrigger>
                     </Style.Triggers>
                 </Style>
-            </ComboBox.ItemContainerStyle>
-        </ComboBox>
+            </ListView.ItemContainerStyle>
+        </ListView>
     </StackPanel>
 </Window>

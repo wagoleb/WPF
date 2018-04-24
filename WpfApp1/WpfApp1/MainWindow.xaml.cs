@@ -41,7 +41,7 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (ListaImion.SelectedIndex > 0)
+            if (ListaImion.SelectedIndex >= 0)
                 listaImion.RemoveAt(ListaImion.SelectedIndex);
             // ListaImion.Items.RemoveAt(ListaImion.SelectedIndex);
         }
