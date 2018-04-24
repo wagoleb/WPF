@@ -14,5 +14,10 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void ListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(ListaImion.SelectedIndex.ToString());
+        }
     }
 }

@@ -6,6 +6,10 @@
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
     <StackPanel>
-      
+        <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
+            <ListBoxItem>Element 1</ListBoxItem>
+            <ListBoxItem>Element 2</ListBoxItem>
+            <ListBoxItem>Element 3</ListBoxItem>
+        </ListBox>
     </StackPanel>
 </Window>
