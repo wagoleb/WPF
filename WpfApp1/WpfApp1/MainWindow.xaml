@@ -12,6 +12,17 @@
             <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
         </WrapPanel>
         <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Padding" Value="4" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="Red" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </StackPanel>
 </Window>
