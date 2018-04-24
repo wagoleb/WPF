@@ -4,20 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
+        Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
     <StackPanel Margin="1,1,1,1">
-        <WrapPanel>
-            <TextBox Margin="1,1,1,1" Width="100" x:Name="noweImie"></TextBox>
-            <Button Margin="1,1,1,1" Click="Button_Click">Dodaj imie do listy</Button>
-            <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
-        </WrapPanel>
-        <ListView SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
+ 
+        <ListView SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
             <ListView.View>
-                <GridView AllowsColumnReorder="True" Selector.IsSelected="True">
+                <GridView>
+                    <GridView.ColumnHeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" />
+                        </DataTemplate>
+                    </GridView.ColumnHeaderTemplate>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="FontSize" Value="20" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                            <Setter Property="Foreground" Value="Blue" />
+                            <Setter Property="Padding" Value="5" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridView.Columns>
-                        <GridViewColumn Header="Number" />
-                        <GridViewColumn Header="Imie" />
-                        <GridViewColumn Header="Age" />
+                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=age}" />
+                        <GridViewColumn Header="Imie" DisplayMemberBinding="{Binding Path=name}" />
+                        <GridViewColumn Header="Age">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=age}" Foreground="Blue" TextDecorations="Underline" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Płeć" DisplayMemberBinding="{Binding Path=sex}" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
@@ -37,5 +53,17 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+        <WrapPanel>
+            <Label>Imie: </Label>
+            <TextBox Margin="1,1,1,1" Width="100" x:Name="noweImie"></TextBox>
+            <Label>Nazwisko: </Label>
+            <TextBox Margin="1,1,1,1" Width="100" x:Name="noweNazwisko"></TextBox>
+            <Label>Plec: </Label>
+            <TextBox Margin="1,1,1,1" Width="100" x:Name="nowaPlec"></TextBox>
+            <Label>Wiek: </Label>
+            <TextBox Margin="1,1,1,1" Width="100" x:Name="nowyWiek"></TextBox>
+        </WrapPanel>
+        <Button Margin="1,1,1,1" Click="Button_Click">Dodaj</Button>
+        <Button Margin="1,1,1,1" Click="Button_Click_1">Usun</Button>
     </StackPanel>
 </Window>

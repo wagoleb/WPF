@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using MyImagesNS;
@@ -11,17 +12,17 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<string> listaImion = new ObservableCollection<string>();
+        ObservableCollection<PersonData> listaImion = new ObservableCollection<PersonData>();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            listaImion.Add("aaa");
-            listaImion.Add("bbb");
-            listaImion.Add("ccc");
-            listaImion.Add("ddd");
-            listaImion.Add("eee");
+            listaImion.Add(new PersonData("wojtke", "golebiewski", "male", 39));
+            listaImion.Add(new PersonData("adam", "solski", "female", 12));
+            listaImion.Add(new PersonData("karol", "kowalski", "male", 23));
+            listaImion.Add(new PersonData("michal", "minke", "female", 56));
+            listaImion.Add(new PersonData("lukasz", "radtke", "male", 19));
 
             ListaImion.ItemsSource = listaImion;
         }
@@ -33,10 +34,9 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ((string)noweImie.Text != "" && !ListaImion.Items.Contains(noweImie.Text))
-                listaImion.Add((string)noweImie.Text);
+            if (noweImie.Text != "" && noweNazwisko.Text != "" && nowaPlec.Text != "" && nowyWiek.Text != "")
+                listaImion.Add(new PersonData(noweImie.Text, noweNazwisko.Text, nowaPlec.Text, Convert.ToInt32(nowyWiek.Text)));
             // ListaImion.Items.Add((string)noweImie.Text);
-            noweImie.Text = "";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
