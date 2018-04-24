@@ -26,7 +26,12 @@
         <Button Width="50" Height="50" Template="{StaticResource ButtontemplateElipse}" Content="Test two" />
         <Button Width="100" Height="100" Template="{StaticResource ButtontemplateElipse}" Content="Test three"/>
 
-        <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=Title}"/>
+        <Button Tag="ZEW">
+            <Button Tag="WEW">
+                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button, AncestorLevel=2}, Path=Tag}"/>
+            </Button>
+        </Button>
+
     </StackPanel>
-       
+
 </Window>
