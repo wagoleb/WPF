@@ -8,6 +8,23 @@
         mc:Ignorable="d"
         Title="Layout" Height="500" Width="500" MinHeight="500" MinWidth="500">
 
+    <Window.Resources>
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="ButtontemplateElipse">
+            <Grid>
+                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="Azure" />
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Fill="Chartreuse" Width="30" Height="20"/>
+                    <TextBlock>
+                <ContentPresenter/>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
     <StackPanel>
+        <Button Width="100" Height="50" Template="{StaticResource ButtontemplateElipse}" Content="Test one" />
+        <Button Width="50" Height="50" Template="{StaticResource ButtontemplateElipse}" Content="Test two" />
+        <Button Width="100" Height="100" Template="{StaticResource ButtontemplateElipse}" Content="Test three"/>
+    </StackPanel>
        
 </Window>
