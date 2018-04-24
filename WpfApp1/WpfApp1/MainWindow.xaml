@@ -16,10 +16,14 @@
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Padding" Value="4" />
                     <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsFocused" Value="True" />
+                            </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="Red" />
                             <Setter Property="FontWeight" Value="Bold" />
-                        </Trigger>
+                        </MultiTrigger>
                     </Style.Triggers>
                 </Style>
             </ListBox.ItemContainerStyle>
