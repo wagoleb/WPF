@@ -11,16 +11,16 @@
             <Button Margin="1,1,1,1" Click="Button_Click">Dodaj imie do listy</Button>
             <Button Margin="1,1,1,1" Click="Button_Click_1">Usun z listy</Button>
         </WrapPanel>
-        <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
-            <ListBox.ItemTemplate>
+        <ComboBox SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion" IsEditable="True">
+            <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel VerticalAlignment="Center">
                         <Label Content="Opis : " />
                         <TextBlock Text="{Binding}" />
                     </WrapPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-            <ListBox.ItemContainerStyle>
+            </ComboBox.ItemTemplate>
+            <ComboBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="Padding" Value="4" />
                     <Style.Triggers>
@@ -34,7 +34,7 @@
                         </MultiTrigger>
                     </Style.Triggers>
                 </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
     </StackPanel>
 </Window>
