@@ -13,19 +13,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-
-            List<MyImages> images = new List<MyImages>();
-
-            images.Add(new MyImages("ubuntu.jpg", "Ubuntu"));
-            images.Add(new MyImages("mint.jpg", "Mint"));
-            images.Add(new MyImages("niema.jpg", "Mint"));
-            images.Add(new MyImages("mint.jpg", "Mint"));
-            images.Add(new MyImages("niema.jpg", "Mint"));
-            images.Add(new MyImages("ubuntu.jpg", "Ubuntu"));
-            images.Add(new MyImages("mint.jpg", "Mint"));
-            images.Add(new MyImages("niema.jpg", "Mint"));
-
-            this.DataContext = images;
         }
     }
 }
