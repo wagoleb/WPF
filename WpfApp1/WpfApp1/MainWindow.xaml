@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="Layout" Height="400" Width="600" MinHeight="500" MinWidth="500">
     <StackPanel Margin="1,1,1,1">
- 
+
         <ListView SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="ListaImion">
             <ListView.View>
                 <GridView>
@@ -24,9 +24,20 @@
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     <GridView.Columns>
-                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=age}" />
-                        <GridViewColumn Header="Imie" DisplayMemberBinding="{Binding Path=name}" />
-                        <GridViewColumn Header="Age">
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=surName}">
+                            <GridViewColumnHeader Click="LetsSortThisShit">
+                                Nazwisko
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=name}">
+                            <GridViewColumnHeader Click="LetsSortThisShit">
+                                Imię
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Click="LetsSortThisShit">
+                                Wiek
+                            </GridViewColumnHeader>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=age}" Foreground="Blue" TextDecorations="Underline" />
@@ -54,13 +65,13 @@
             </ListView.ItemContainerStyle>
         </ListView>
         <WrapPanel>
-            <Label>Imie: </Label>
+            <Label>Imie:</Label>
             <TextBox Margin="1,1,1,1" Width="100" x:Name="noweImie"></TextBox>
-            <Label>Nazwisko: </Label>
+            <Label>Nazwisko:</Label>
             <TextBox Margin="1,1,1,1" Width="100" x:Name="noweNazwisko"></TextBox>
-            <Label>Plec: </Label>
+            <Label>Plec:</Label>
             <TextBox Margin="1,1,1,1" Width="100" x:Name="nowaPlec"></TextBox>
-            <Label>Wiek: </Label>
+            <Label>Wiek:</Label>
             <TextBox Margin="1,1,1,1" Width="100" x:Name="nowyWiek"></TextBox>
         </WrapPanel>
         <Button Margin="1,1,1,1" Click="Button_Click">Dodaj</Button>

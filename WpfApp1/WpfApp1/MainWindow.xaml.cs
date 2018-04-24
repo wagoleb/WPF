@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using MyImagesNS;
+using System.ComponentModel;
 
 
 namespace WpfApp1
@@ -30,6 +33,7 @@ namespace WpfApp1
         private void ListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             // MessageBox.Show(ListaImion.SelectedItems.ToString());
+            Console.WriteLine("w pizde jebana czemu tu?");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,6 +48,21 @@ namespace WpfApp1
             if (ListaImion.SelectedIndex >= 0)
                 listaImion.RemoveAt(ListaImion.SelectedIndex);
             // ListaImion.Items.RemoveAt(ListaImion.SelectedIndex);
+        }
+
+        private void LetsSortThisShit(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("KURWA CHUJ");
+            GridViewColumnHeader header = (sender as GridViewColumnHeader);
+            string columnToSort = header.Content.ToString();
+
+            CollectionView defaultView = (CollectionView)CollectionViewSource.GetDefaultView(ListaImion.ItemsSource);
+            ListSortDirection howToSort = ListSortDirection.Ascending;
+
+            Console.WriteLine(defaultView.SortDescriptions.Count);
+
+            defaultView.SortDescriptions.Clear();
+            defaultView.SortDescriptions.Add(new SortDescription(columnToSort, howToSort));
         }
     }
 }
