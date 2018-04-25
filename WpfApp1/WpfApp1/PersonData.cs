@@ -28,6 +28,7 @@ namespace ListBoxControl
         public bool isSubscribed { get; set; }
         public Uri webSite { get; set; }
         public gender genderType { get; set; }
+        public string description { get; set; }
         public enum gender
         {
             male,

@@ -13,6 +13,8 @@
                   FrozenColumnCount="1"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
+
+                <!-- custom style column -->
                 <DataGridTextColumn Header="Id" Binding="{Binding Path=index}">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
@@ -20,7 +22,15 @@
                             <Setter Property="IsEnabled" Value="False" />
                         </Style>
                     </DataGridTextColumn.CellStyle>
+
+                    <!-- custom header style -->
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
+
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
                 <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" />
                 <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}" />
@@ -38,6 +48,11 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=description}"/>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
         </DataGrid>
     </StackPanel>
 </Window>

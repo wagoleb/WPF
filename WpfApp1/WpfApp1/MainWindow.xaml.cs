@@ -27,10 +27,10 @@ namespace ListBoxControl
         {
             InitializeComponent();
 
-            listOfPeople.Add(new PersonData() { Name = "Arek", Age = 26, Email = "arek@gmail.com", genderType = PersonData.gender.female });
-            listOfPeople.Add(new PersonData() { Name = "Michal", Age = 18, Email = "michal@gmail.com", Image = "ubuntu.jpg" });
-            listOfPeople.Add(new PersonData() { Name = "Bolek", Age = 36, Email = "bolek@wp.pl", isSubscribed = true, Image = "mint.jpg" });
-            listOfPeople.Add(new PersonData() { Name = "Wiola", Age = 20, Email = "wiola@onet.pl", webSite = new Uri("http://google.pl") });
+            listOfPeople.Add(new PersonData() { Name = "Arek", Age = 26, Email = "arek@gmail.com", genderType = PersonData.gender.female, description = "Desc for Arek, age 26, arek@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Michal", Age = 18, Email = "michal@gmail.com", Image = "ubuntu.jpg", description = "Desc for Michal, age 18, email: michal@google.com" });
+            listOfPeople.Add(new PersonData() { Name = "Bolek", Age = 36, Email = "bolek@wp.pl", isSubscribed = true, Image = "mint.jpg", description = "Desc for Bolek." });
+            listOfPeople.Add(new PersonData() { Name = "Wiola", Age = 20, Email = "wiola@onet.pl", webSite = new Uri("http://google.pl"), description = "Sorry, no description." });
             dataGridOfPeople.ItemsSource = listOfPeople;
             genderTypeColumn.ItemsSource = Enum.GetValues(typeof(PersonData.gender));
         }
