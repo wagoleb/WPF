@@ -22,10 +22,16 @@ namespace ListBoxControl
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        ObservableCollection<PersonData> listOfPeople = new ObservableCollection<PersonData>();
         public MainWindow()
         {
             InitializeComponent();
+
+            listOfPeople.Add(new PersonData() { Name = "Arek", Age = 26, Email = "arek@gmail.com", genderType = PersonData.gender.female });
+            listOfPeople.Add(new PersonData() { Name = "Michal", Age = 18, Email = "michal@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Bolek", Age = 36, Email = "bolek@wp.pl", isSubscribed = true });
+            listOfPeople.Add(new PersonData() { Name = "Wiola", Age = 20, Email = "wiola@onet.pl", webSite = new Uri("http://google.pl") });
+            dataGridOfPeople.ItemsSource = listOfPeople;
         }
     }
 }
