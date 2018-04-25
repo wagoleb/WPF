@@ -11,7 +11,16 @@
                   SelectionUnit="FullRow"
                   AlternatingRowBackground="AliceBlue"
                   FrozenColumnCount="1"
-            
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=index}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
+                <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}" />
+                <DataGridHyperlinkColumn Header="Website" Binding="{Binding Path=webSite}" />
+                <DataGridCheckBoxColumn Header="Subscribed" Binding="{Binding Path=isSubscribed}" />
+                <DataGridComboBoxColumn Header="Sex" x:Name="genderTypeColumn" SelectedValueBinding="{Binding Path=genderType}"/>
+            </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
 </Window>

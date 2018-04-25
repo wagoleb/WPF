@@ -32,6 +32,7 @@ namespace ListBoxControl
             listOfPeople.Add(new PersonData() { Name = "Bolek", Age = 36, Email = "bolek@wp.pl", isSubscribed = true });
             listOfPeople.Add(new PersonData() { Name = "Wiola", Age = 20, Email = "wiola@onet.pl", webSite = new Uri("http://google.pl") });
             dataGridOfPeople.ItemsSource = listOfPeople;
+            genderTypeColumn.ItemsSource = Enum.GetValues(typeof(PersonData.gender));
         }
     }
 }
