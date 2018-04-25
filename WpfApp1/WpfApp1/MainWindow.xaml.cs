@@ -1,49 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
-using MyImagesNS;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-
-namespace WpfApp1
+namespace ListBoxControl
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<PersonData> listaImion = new ObservableCollection<PersonData>();
+        ObservableCollection<PersonData> listOfNames = new ObservableCollection<PersonData>();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            listaImion.Add(new PersonData("wojtke", "golebiewski", "male", 39));
-            listaImion.Add(new PersonData("adam", "solski", "female", 12));
-            listaImion.Add(new PersonData("karol", "kowalski", "male", 23));
-            listaImion.Add(new PersonData("michal", "minke", "female", 56));
-            listaImion.Add(new PersonData("lukasz", "radtke", "male", 19));
+            listOfNames.Add(new PersonData() { Name = "Arek", Age = 26, Email = "videokurspl@gmail.com" });
+            listOfNames.Add(new PersonData() { Name = "Arek", Age = 20, Email = "videokurspl@gmail.com" });
+            listOfNames.Add(new PersonData() { Name = "Wiola", Age = 20, Email = "asdfasdf@gmail.com" });
+            listOfNames.Add(new PersonData() { Name = "Karol", Age = 23, Email = "asdfasdg@gmail.com" });
 
-            ListaImion.ItemsSource = listaImion;
+            ListaImion.ItemsSource = listOfNames;
+
         }
 
-        private void ListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // MessageBox.Show(ListaImion.SelectedItems.ToString());
+            //MessageBox.Show(ListaImion.SelectedIndex.ToString());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (noweImie.Text != "" && noweNazwisko.Text != "" && nowaPlec.Text != "" && nowyWiek.Text != "")
-                listaImion.Add(new PersonData(noweImie.Text, noweNazwisko.Text, nowaPlec.Text, Convert.ToInt32(nowyWiek.Text)));
-            // ListaImion.Items.Add((string)noweImie.Text);
+            listOfNames.Add(new PersonData() { Name = NameToAdd.Text, Age = Convert.ToInt32(AgeToAdd.Text), Email = EmailToAdd.Text });
+            //   ListaImion.Items.Add(NameToAdd.Text);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (ListaImion.SelectedIndex >= 0)
-                listaImion.RemoveAt(ListaImion.SelectedIndex);
-            // ListaImion.Items.RemoveAt(ListaImion.SelectedIndex);
+            PersonData selectedName = (PersonData)ListaImion.SelectedItem;
+
+            if (selectedName != null)
+                listOfNames.Remove(selectedName);
+
+            //ListaImion.Items.RemoveAt(selectedNameIndex);
         }
+
+        private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader header = (sender as GridViewColumnHeader);
+            string columnNameToSort = header.Content.ToString();
+
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(ListaImion.ItemsSource);
+            ListSortDirection howToSort = ListSortDirection.Ascending;
+
+            if (view.SortDescriptions.Any())
+            {
+                SortDescription item = view.SortDescriptions.ElementAt(0);
+
+                if (columnNameToSort == item.PropertyName.ToString())
+                    if (item.Direction == ListSortDirection.Ascending)
+                        howToSort = ListSortDirection.Descending;
+                    else
+                        howToSort = ListSortDirection.Ascending;
+
+            }
+
+            view.SortDescriptions.Clear();
+
+            view.SortDescriptions.Add(new SortDescription(columnNameToSort, howToSort));
+        }
+
+
     }
 }
