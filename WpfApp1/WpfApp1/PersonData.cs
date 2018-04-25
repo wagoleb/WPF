@@ -37,5 +37,6 @@ namespace ListBoxControl
         {
             index = ++counter;
         }
+        public string Image { get; set; }
     }
 }

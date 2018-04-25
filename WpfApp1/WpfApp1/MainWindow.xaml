@@ -20,6 +20,16 @@
                 <DataGridHyperlinkColumn Header="Website" Binding="{Binding Path=webSite}" />
                 <DataGridCheckBoxColumn Header="Subscribed" Binding="{Binding Path=isSubscribed}" />
                 <DataGridComboBoxColumn Header="Sex" x:Name="genderTypeColumn" SelectedValueBinding="{Binding Path=genderType}"/>
+
+                <!-- customowe kolumny -->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=Image}" Height="15" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
