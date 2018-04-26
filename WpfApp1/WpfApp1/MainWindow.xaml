@@ -1,69 +1,8 @@
 ﻿<Window x:Class="ListBoxControl.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:genderSelectorTemplate="clr-namespace:GenderTemplateSelectorNM"
         Title="MainWindow" Height="300" Width="525">
-    <Window.Resources>
-        <DataTemplate x:Key="maleTemplate">
-            <TextBlock Text="{Binding Path=description}" Foreground="Blue" />
-        </DataTemplate>
-        <DataTemplate x:Key="femaleTemplate">
-            <TextBlock Text="{Binding Path=description}" Foreground="Pink" />
-        </DataTemplate>
-        <genderSelectorTemplate:GenderTemplateSelector 
-            x:Key="genderSelectorInstance"
-            MaleTemplate="{StaticResource maleTemplate}"
-            FemaleTemplate="{StaticResource femaleTemplate}"
-            />
-    </Window.Resources>
-    <StackPanel>
-        <DataGrid x:Name="dataGridOfPeople" 
-                  CanUserAddRows="False" 
-                  CanUserDeleteRows="False" 
-                  CanUserResizeRows="False" 
-                  SelectionMode="Extended" 
-                  SelectionUnit="FullRow"
-                  AlternatingRowBackground="AliceBlue"
-                  FrozenColumnCount="1"
-                  AutoGenerateColumns="False"
-                  RowDetailsTemplateSelector="{StaticResource genderSelectorInstance}">
-            <DataGrid.Columns>
-
-                <!-- custom style column -->
-                <DataGridTextColumn Header="Id" Binding="{Binding Path=index}">
-                    <DataGridTextColumn.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="IsEnabled" Value="False" />
-                        </Style>
-                    </DataGridTextColumn.CellStyle>
-
-                    <!-- custom header style -->
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="FontWeight" Value="Bold" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
-                <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}" />
-                <DataGridHyperlinkColumn Header="Website" Binding="{Binding Path=webSite}" />
-                <DataGridCheckBoxColumn Header="Subscribed" Binding="{Binding Path=isSubscribed}" />
-                <DataGridComboBoxColumn Header="Sex" x:Name="genderTypeColumn" SelectedValueBinding="{Binding Path=genderType}"/>
-
-                <!-- customowe kolumny -->
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Path=Image}" Height="15" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid>
-    </StackPanel>
+    <Grid>
+        
+    </Grid>
 </Window>
