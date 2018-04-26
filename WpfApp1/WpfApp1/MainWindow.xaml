@@ -37,8 +37,9 @@
             <MenuItem Header="Tools" />
             <MenuItem Header="Help" />
         </Menu>
-        <TextBox>
+
+        <RichTextBox>
             
-        </TextBox>
+        </RichTextBox>
     </DockPanel>
 </Window>
