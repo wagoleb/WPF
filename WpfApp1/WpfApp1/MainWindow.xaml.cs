@@ -25,11 +25,22 @@ namespace ListBoxControl
         public MainWindow()
         {
             InitializeComponent();
+            ApplicationCommands.Close.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
         }
 
         private void NewAction(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("New file action");
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
