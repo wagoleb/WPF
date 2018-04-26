@@ -67,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="GenderTemplateSelector.cs" />
     <Compile Include="ImagesWithTitles.xaml.cs">
       <DependentUpon>ImagesWithTitles.xaml</DependentUpon>
     </Compile>
