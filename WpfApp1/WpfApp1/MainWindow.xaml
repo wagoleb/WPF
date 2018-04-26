@@ -4,42 +4,44 @@
         Title="MainWindow" Height="300" Width="525">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="CTRL+N" Command="New">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" InputGestureText="CTRL+N" Command="New">
                     <MenuItem.Icon>
                         <Image Source="newFile.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Open" InputGestureText="CTRL+O">
+                <MenuItem Header="_Open" InputGestureText="CTRL+O" Command="Open">
                     <MenuItem.Icon>
                         <Image Source="openFile.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Save" InputGestureText="CTRL+S">
+                <MenuItem Header="_Save" InputGestureText="CTRL+S" Command="Save">
                     <MenuItem.Icon>
                         <Image Source="saveFile.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="Exit" InputGestureText="CTRL+D">
+                <MenuItem Header="E_xit" InputGestureText="CTRL+D" Command="Close">
                     <MenuItem.Icon>
                         <Image Source="exit.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Copy" Command="Copy" />
-                <MenuItem Header="Cut" Command="Cut" />
-                <MenuItem Header="Paste" Command="Paste" />
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Copy" Command="Copy" />
+                <MenuItem Header="Cu_t" Command="Cut" />
+                <MenuItem Header="_Paste" Command="Paste" />
                 <Separator />
-                <MenuItem Header="Increase font" Command="IncreaseFontSize" />
+                <MenuItem Header="_Increase font" Command="IncreaseFontSize" />
             </MenuItem>
-            <MenuItem Header="Tools" />
+            <MenuItem Header="Tools">
+                <MenuItem IsCheckable="True" Header="Zawijaj wiersze" />
+            </MenuItem>
             <MenuItem Header="Help" />
         </Menu>
-
-        <RichTextBox>
-            
+        <Button DockPanel.Dock="Bottom" Command="Copy" Content="Copy..." CommandTarget="{Binding ElementName=poleEdycji}" />
+        <RichTextBox x:Name="poleEdycji">
         </RichTextBox>
+        
     </DockPanel>
 </Window>
