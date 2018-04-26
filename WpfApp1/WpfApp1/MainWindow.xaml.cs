@@ -26,5 +26,10 @@ namespace ListBoxControl
         {
             InitializeComponent();
         }
+
+        private void NewAction(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("New file action");
+        }
     }
 }
