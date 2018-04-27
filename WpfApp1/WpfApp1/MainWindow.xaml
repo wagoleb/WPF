@@ -7,6 +7,10 @@
         <Style TargetType="{x:Type Image}">
             <Setter Property="Width" Value="16" />
         </Style>
+        <ContextMenu x:Key="customContextMenu">
+            <MenuItem Command="Help" />
+            <MenuItem Command="Cut" />
+        </ContextMenu>
     </Window.Resources>
     <Window.CommandBindings>
         <!--
@@ -66,14 +70,7 @@
                 <MenuItem Command="Help" />
             </MenuItem>
         </Menu>
-        <Button DockPanel.Dock="Bottom" Command="Copy" Content="Copy..." CommandTarget="{Binding ElementName=poleEdycji}">
-            <Button.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Command="Help" />
-                    <MenuItem Command="Cut" />
-                </ContextMenu>
-            </Button.ContextMenu>
-        </Button>
+        <Button DockPanel.Dock="Bottom" Command="Copy" Content="Copy..." CommandTarget="{Binding ElementName=poleEdycji}" ContextMenu="{StaticResource customContextMenu}"/>
         <RichTextBox x:Name="poleEdycji">
         </RichTextBox>
 
