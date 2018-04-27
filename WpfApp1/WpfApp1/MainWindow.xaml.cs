@@ -25,7 +25,9 @@ namespace ListBoxControl
         public MainWindow()
         {
             InitializeComponent();
+            /*
             ApplicationCommands.Close.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
+            */
         }
 
         private void NewAction(object sender, RoutedEventArgs e)
