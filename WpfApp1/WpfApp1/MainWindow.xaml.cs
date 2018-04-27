@@ -29,7 +29,7 @@ namespace ListBoxControl
             */
             /* ApplicationCommands.Copy.InputGestures.Clear();
             ApplicationCommands.Copy.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control)); */
-            EditingCommands.IncreaseFontSize.InputGestures.Add(new KeyGesture(Key.F3, ModifierKeys.Shift));
+            EditingCommands.IncreaseFontSize.InputGestures.Add(new KeyGesture(Key.F3, ModifierKeys.Shift | ModifierKeys.Control));
             InitializeComponent();
         }
 
