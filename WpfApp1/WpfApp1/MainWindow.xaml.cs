@@ -24,10 +24,12 @@ namespace ListBoxControl
     {
         public MainWindow()
         {
-            InitializeComponent();
             /*
             ApplicationCommands.Close.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
             */
+            ApplicationCommands.Copy.InputGestures.Clear();
+            ApplicationCommands.Copy.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
+            InitializeComponent();
         }
 
         private void NewAction(object sender, RoutedEventArgs e)
