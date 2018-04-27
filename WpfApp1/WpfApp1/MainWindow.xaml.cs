@@ -58,6 +58,7 @@ namespace ListBoxControl
         {
             HelpWindow helpWindowInst = new HelpWindow();
             helpWindowInst.ShowDialog();
+            poleEdycji.AppendText(helpWindowInst.prompt());
         }
     }
 }

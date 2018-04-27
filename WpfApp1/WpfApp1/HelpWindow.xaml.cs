@@ -23,5 +23,14 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+        public string prompt()
+        {
+            base.ShowDialog();
+            return this.email.Text;
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
