@@ -12,7 +12,8 @@
         <!--
         <CommandBinding Command="Close" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed"/>
         -->
-        <CommandBinding Command="komendacustomowa:CustomCommand.Exit" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed"/>
+        <CommandBinding Command="komendacustomowa:CustomCommand.Exit" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" />
+        <CommandBinding Command="Help" CanExecute="CanExecuteHelpCommand" Executed="ExecutedHelpCommand" />
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -61,7 +62,9 @@
             <MenuItem Header="Tools">
                 <MenuItem IsCheckable="True" Header="Zawijaj wiersze" />
             </MenuItem>
-            <MenuItem Header="Help" />
+            <MenuItem Header="Help">
+                <MenuItem Command="Help" />
+            </MenuItem>
         </Menu>
         <Button DockPanel.Dock="Bottom" Command="Copy" Content="Copy..." CommandTarget="{Binding ElementName=poleEdycji}" />
         <RichTextBox x:Name="poleEdycji">

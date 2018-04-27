@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1;
 
 namespace ListBoxControl
 {
@@ -46,6 +47,17 @@ namespace ListBoxControl
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void CanExecuteHelpCommand(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void ExecutedHelpCommand(object sender, ExecutedRoutedEventArgs e)
+        {
+            HelpWindow helpWindowInst = new HelpWindow();
+            helpWindowInst.Show();
         }
     }
 }
