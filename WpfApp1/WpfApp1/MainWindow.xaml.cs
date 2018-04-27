@@ -27,8 +27,9 @@ namespace ListBoxControl
             /*
             ApplicationCommands.Close.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
             */
-            ApplicationCommands.Copy.InputGestures.Clear();
-            ApplicationCommands.Copy.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
+            /* ApplicationCommands.Copy.InputGestures.Clear();
+            ApplicationCommands.Copy.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control)); */
+            EditingCommands.IncreaseFontSize.InputGestures.Add(new KeyGesture(Key.F3, ModifierKeys.Shift));
             InitializeComponent();
         }
 
