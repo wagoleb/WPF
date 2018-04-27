@@ -59,7 +59,7 @@ namespace ListBoxControl
             /*
             HelpWindow helpWindowInst = new HelpWindow();
             helpWindowInst.ShowDialog();
-            poleEdycji.AppendText(helpWindowInst.prompt());
+            poleEdycji.AppendText(helpWindowInst.Prompt());
             */
             MessageBoxResult result = MessageBox.Show("message box text", "caption text", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
             poleEdycji.AppendText(result.ToString());

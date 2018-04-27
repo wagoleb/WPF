@@ -23,7 +23,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        public string prompt()
+        public string Prompt()
         {
             base.ShowDialog();
             return this.email.Text;
