@@ -57,7 +57,7 @@ namespace ListBoxControl
         private void ExecutedHelpCommand(object sender, ExecutedRoutedEventArgs e)
         {
             HelpWindow helpWindowInst = new HelpWindow();
-            helpWindowInst.Show();
+            helpWindowInst.ShowDialog();
         }
     }
 }
