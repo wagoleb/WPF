@@ -56,13 +56,15 @@ namespace ListBoxControl
 
         private void ExecutedHelpCommand(object sender, ExecutedRoutedEventArgs e)
         {
-            /*
             HelpWindow helpWindowInst = new HelpWindow();
+            helpWindowInst.email.Text = e.Parameter.ToString();
             helpWindowInst.ShowDialog();
             poleEdycji.AppendText(helpWindowInst.Prompt());
-            */
+
+            /*
             MessageBoxResult result = MessageBox.Show("message box text", "caption text", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
             poleEdycji.AppendText(result.ToString());
+            */
         }
     }
 }
