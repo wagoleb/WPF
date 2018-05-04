@@ -25,47 +25,7 @@ namespace ListBoxControl
     {
         public MainWindow()
         {
-            /*
-            ApplicationCommands.Close.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Control));
-            */
-            /* ApplicationCommands.Copy.InputGestures.Clear();
-            ApplicationCommands.Copy.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control)); */
-            EditingCommands.IncreaseFontSize.InputGestures.Add(new KeyGesture(Key.F3, ModifierKeys.Shift | ModifierKeys.Control));
             InitializeComponent();
-        }
-
-        private void NewAction(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("New file action");
-        }
-
-        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void CanExecuteHelpCommand(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void ExecutedHelpCommand(object sender, ExecutedRoutedEventArgs e)
-        {
-            HelpWindow helpWindowInst = new HelpWindow();
-            if (e.Parameter != null)
-                helpWindowInst.email.Text = e.Parameter.ToString();
-            helpWindowInst.ShowDialog();
-            poleEdycji.AppendText(helpWindowInst.Prompt());
-
-            /*
-            MessageBoxResult result = MessageBox.Show("message box text", "caption text", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
-            poleEdycji.AppendText(result.ToString());
-            */
         }
     }
 }
