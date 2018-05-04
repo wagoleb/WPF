@@ -12,6 +12,9 @@
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Border.BorderThickness" Value="3,3,3,0" TargetName="chuja"/>
                 </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Blue" TargetName="chuja"/>
+                </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
