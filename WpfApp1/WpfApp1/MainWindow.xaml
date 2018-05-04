@@ -11,6 +11,14 @@
             <MenuItem Command="Help" CommandParameter="testParameter" />
             <MenuItem Command="Cut" />
         </ContextMenu>
+        <ToolTip x:Key="otworz">
+            <StackPanel>
+                <TextBlock FontWeight="Bold">Open New File</TextBlock>
+                <TextBlock>Search your PC for file to open....</TextBlock>
+                <Separator />
+                <TextBlock FontStyle="Italic">Press F1 for more help</TextBlock>
+            </StackPanel>
+        </ToolTip>
     </Window.Resources>
     <Window.CommandBindings>
         <!--
@@ -27,7 +35,7 @@
                         <Image Source="newFile.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Open" InputGestureText="CTRL+O" Command="Open">
+                <MenuItem Header="_Open" InputGestureText="CTRL+O" Command="Open" ToolTip="{StaticResource otworz}" ToolTipService.ShowOnDisabled="True">
                     <MenuItem.Icon>
                         <Image Source="openFile.png" />
                     </MenuItem.Icon>
@@ -38,7 +46,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="E_xit" Command="komendacustomowa:CustomCommand.Exit">
+                <MenuItem Header="E_xit" Command="komendacustomowa:CustomCommand.Exit" ToolTip="{StaticResource otworz}">
                     <MenuItem.Icon>
                         <Image Source="exit.png" />
                     </MenuItem.Icon>
@@ -71,6 +79,58 @@
             </MenuItem>
         </Menu>
         <Button DockPanel.Dock="Bottom" Command="Copy" Content="Copy..." CommandTarget="{Binding ElementName=poleEdycji}" ContextMenu="{StaticResource customContextMenu}"/>
+
+        <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical" IsLocked="False">
+            <ToolBar>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+            </ToolBar>
+
+            <ToolBar>
+                <Button>
+                    <Button.ToolTip >
+                        <TextBlock>Opens new file....</TextBlock>
+                    </Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+                <Button>
+                    <Button.Content>
+                        <Image Source="openFile.png" />
+                    </Button.Content>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        
         <RichTextBox x:Name="poleEdycji">
         </RichTextBox>
 
