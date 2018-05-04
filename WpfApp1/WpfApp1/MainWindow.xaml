@@ -5,8 +5,6 @@
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
     <StackPanel>
-        <Label Content="{x:Static sys:DateTime.Now}" Margin="3" ContentStringFormat="dd/MM (MMMM)/yyyy, dddd" />
-        <TextBlock Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat=dd/MM (MMMM)/yyyy\, dddd}" />
-        <TextBlock Text="{Binding ElementName=windowName, Path=Width, StringFormat=F}" />
+
     </StackPanel>
 </Window>
