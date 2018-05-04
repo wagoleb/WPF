@@ -3,32 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:komendacustomowa="clr-namespace:CustomCommandNM"
         Title="MainWindow" Height="300" Width="525">
-    <Window.Resources>
-        <ControlTemplate TargetType="{x:Type TabItem}" x:Key="tabTemplate">
-            <Border x:Name="chuja" Padding="5" BorderBrush="Black" BorderThickness="1,1,1,0" Margin="2,0">
-            <ContentPresenter ContentSource="Header" />
-            </Border>
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Border.BorderThickness" Value="3,3,3,0" TargetName="chuja"/>
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Blue" TargetName="chuja"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-    </Window.Resources>
     <StackPanel>
-        <TabControl>
-            <TabItem Header="Tab 1" Template="{StaticResource tabTemplate}">
-                Zawartosc 1
-            </TabItem>
-            <TabItem Header="Tab 2" Template="{StaticResource tabTemplate}">
-                Zawartosc 2
-            </TabItem>
-            <TabItem Header="Tab 3" Template="{StaticResource tabTemplate}">
-                Zawartosc 3
-            </TabItem>
-        </TabControl>
+
     </StackPanel>
 </Window>
