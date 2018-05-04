@@ -57,7 +57,8 @@ namespace ListBoxControl
         private void ExecutedHelpCommand(object sender, ExecutedRoutedEventArgs e)
         {
             HelpWindow helpWindowInst = new HelpWindow();
-            helpWindowInst.email.Text = e.Parameter.ToString();
+            if (e.Parameter != null)
+                helpWindowInst.email.Text = e.Parameter.ToString();
             helpWindowInst.ShowDialog();
             poleEdycji.AppendText(helpWindowInst.Prompt());
 

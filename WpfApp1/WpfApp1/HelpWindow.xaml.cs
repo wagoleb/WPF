@@ -25,7 +25,7 @@ namespace WpfApp1
         }
         public string Prompt()
         {
-            base.ShowDialog();
+            // this.ShowDialog();
             return this.email.Text;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
