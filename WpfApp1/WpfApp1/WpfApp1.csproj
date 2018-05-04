@@ -90,6 +90,7 @@
     <Compile Include="MyImages.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonData.cs" />
+    <Compile Include="PersonDatas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
