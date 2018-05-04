@@ -5,6 +5,13 @@
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
     <StackPanel>
-        <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="zegar" ContentStringFormat="dd/MM (MMMM)/yyyy, dddd, H:mm:ss"/>
+       <!-- <DatePicker /> -->
+        <Calendar SelectionMode="MultipleRange" DisplayMode="Decade" DisplayDate="09/20/1978" DisplayDateStart="01/01/1970" DisplayDateEnd="12/31/2020" SelectedDatesChanged="pokazWybrane">
+            <Calendar.BlackoutDates>
+                <CalendarDateRange Start="05/13/2018" End="05/18/2018" />
+            </Calendar.BlackoutDates>
+        </Calendar>
+        <TextBlock x:Name="wartosci" />
+        <ComboBox x:Name="kombo" />
     </StackPanel>
 </Window>
