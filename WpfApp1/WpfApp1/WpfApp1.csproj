@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="CustomCommand.cs" />
+    <Compile Include="FileExtensions.cs" />
     <Compile Include="GenderTemplateSelector.cs" />
     <Compile Include="HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>

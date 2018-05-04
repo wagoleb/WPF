@@ -2,8 +2,18 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:komendacustomowa="clr-namespace:CustomCommandNM"
+        xmlns:lokalna="clr-namespace:FileExtensionsNS"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow" Height="300" Width="525">
     <StackPanel>
-
+        <Label Content="{x:Static Colors.Azure}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.CurrentDirectory}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.MachineName}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.OSVersion}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.ProcessorCount}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.UserDomainName}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.UserName}" Margin="3" />
+        <Label Content="{x:Static sys:Environment.Version}" Margin="3" />
+        <Label Content="{x:Static lokalna:FileExtensions.xml}" Margin="3" />
     </StackPanel>
 </Window>
