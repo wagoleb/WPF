@@ -5,9 +5,9 @@
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
     <Window.Resources>
-        <multibinding:PersonDatas x:Key="person" name="wojtek" age="39" />
+        <multibinding:PersonDatas x:Key="person" name="{x:Null}" age="39" />
     </Window.Resources>
     <StackPanel>
-        <TextBlock DataContext="{StaticResource person}" Text="{Binding Path=name, StringFormat=Imie: {0}}" />
+        <TextBlock DataContext="{StaticResource person}" Text="{Binding Path=name, StringFormat=Imie: {0}, TargetNullValue=nie podano}" />
     </StackPanel>
 </Window>
