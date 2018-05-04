@@ -4,6 +4,6 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow" Height="300" Width="525">
     <StackPanel>
-        <Label Content="{x:Static sys:DateTime.Now}" Margin="3" ContentStringFormat="F" />
+        <Label Content="{x:Static sys:DateTime.Now}" Margin="3" ContentStringFormat="dd/MM (MMMM)/yyyy, dddd" />
     </StackPanel>
 </Window>
