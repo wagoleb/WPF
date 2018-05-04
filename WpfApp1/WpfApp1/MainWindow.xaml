@@ -4,17 +4,7 @@
         xmlns:multibinding="clr-namespace:multiBindingNS"
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
-    <Window.Resources>
-        <multibinding:PersonDatas x:Key="person" name="wojtek" age="{x:Null}" />
-    </Window.Resources>
     <StackPanel>
-        <TextBlock DataContext="{StaticResource person}">
-            <TextBlock.Text>
-                <MultiBinding StringFormat="Imię: {0}, Wiek: {1}">
-                    <Binding Path="name" TargetNullValue="brak" />
-                    <Binding Path="age" TargetNullValue="brak" />
-                </MultiBinding>
-            </TextBlock.Text>
-        </TextBlock>
+        <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="zegar" ContentStringFormat="dd/MM (MMMM)/yyyy, dddd, H:mm:ss"/>
     </StackPanel>
 </Window>
