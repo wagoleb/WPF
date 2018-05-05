@@ -4,6 +4,8 @@
         xmlns:multibinding="clr-namespace:multiBindingNS"
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
-    <StackPanel>
-    </StackPanel>
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Bottom"></WrapPanel>
+        <MediaElement></MediaElement>
+    </DockPanel>
 </Window>
