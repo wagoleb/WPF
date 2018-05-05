@@ -27,17 +27,6 @@ namespace ListBoxControl
         public MainWindow()
         {
             InitializeComponent();
-
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += dateTimer;
-            timer.Start();
-        }
-
-        private void dateTimer(object sender, EventArgs e)
-        {
-            zegar.Content = DateTime.Now.ToLocalTime();
         }
     }
 }

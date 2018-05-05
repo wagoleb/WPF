@@ -5,6 +5,5 @@
         Title="MainWindow" Height="300" Width="525"
         x:Name="windowName">
     <StackPanel>
-        <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="zegar" ContentStringFormat="dd/MM (MMMM)/yyyy, dddd, H:mm:ss"/>
     </StackPanel>
 </Window>
