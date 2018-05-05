@@ -3,9 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:multibinding="clr-namespace:multiBindingNS"
         Title="MainWindow" Height="300" Width="525"
-        x:Name="windowName">
-    <DockPanel>
-        <WrapPanel DockPanel.Dock="Bottom"></WrapPanel>
-        <MediaElement></MediaElement>
+        x:Name="windowName" Loaded="startScreen">
+    <DockPanel Margin="1,1,1,1">
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+            <Button Width="40" Click="PlayFunc">Play</Button>
+            <Button Width="40" Click="PauseFunc">Pause</Button>
+            <Button Width="40" Click="StopFunc">Stop</Button>
+            <Label Content="Volume: " />
+            <Slider Value="{Binding ElementName=videoClip, Path=Volume}" Maximum="1" Width="100"/>
+            <Label Content="Time: "/>
+            <Slider Width="150"  x:Name="position" ValueChanged="changeVideoPostion"/>
+        </WrapPanel>
+        <MediaElement Source="HIGH SPEED Pitching.wmv"
+                      Volume="0.01"
+                      LoadedBehavior="Manual"
+                      x:Name="videoClip"
+                      MediaFailed="videoClipMediaFailed"
+                      MediaOpened="videoClipOpened"
+                      Margin="0,0,0,1"/>
     </DockPanel>
 </Window>
