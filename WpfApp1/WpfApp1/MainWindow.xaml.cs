@@ -24,20 +24,55 @@ namespace ListBoxControl
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer positionTimer;
         public MainWindow()
         {
             InitializeComponent();
-
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += dateTimer;
-            timer.Start();
         }
 
-        private void dateTimer(object sender, EventArgs e)
+        private void PlayFunc(object sender, RoutedEventArgs e)
         {
-            zegar.Content = DateTime.Now.ToLocalTime();
+            videoClip.Play();
+        }
+
+        private void PauseFunc(object sender, RoutedEventArgs e)
+        {
+            videoClip.Pause();
+        }
+
+        private void StopFunc(object sender, RoutedEventArgs e)
+        {
+            videoClip.Stop();
+        }
+
+        private void videoClipMediaFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            MessageBox.Show(e.ErrorException.Message);
+        }
+
+        private void startScreen(object sender, RoutedEventArgs e)
+        {
+            videoClip.ScrubbingEnabled = true;
+            videoClip.Stop();
+        }
+
+        private void videoClipOpened(object sender, RoutedEventArgs e)
+        {
+            position.Maximum = videoClip.NaturalDuration.TimeSpan.TotalSeconds;
+            positionTimer = new DispatcherTimer();
+            positionTimer.Interval = TimeSpan.FromSeconds(1);
+            positionTimer.Tick += PositionTimer_Tick;
+            positionTimer.Start();
+        }
+
+        private void PositionTimer_Tick(object sender, EventArgs e)
+        {
+            position.Value = videoClip.Position.TotalSeconds;
+        }
+
+        private void changeVideoPostion(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            videoClip.Position = TimeSpan.FromSeconds(position.Value);
         }
     }
 }
