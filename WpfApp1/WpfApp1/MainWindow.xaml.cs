@@ -72,6 +72,9 @@ namespace ListBoxControl
             // positionTimer.Start(); - tu nie powinno byc start timer'a tylko w play
 
             totalVideoTime.Content = videoClip.NaturalDuration.TimeSpan.ToString(@"hh\:mm\:ss");
+
+            videoClip.Play();
+            videoClip.Pause();
         }
 
         private void PositionTimer_Tick(object sender, EventArgs e)
