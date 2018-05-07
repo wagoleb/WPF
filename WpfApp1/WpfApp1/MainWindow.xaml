@@ -1,9 +1,12 @@
 ﻿<Window x:Class="ListBoxControl.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:multibinding="clr-namespace:multiBindingNS"
-        Title="MainWindow" Height="300" Width="525"
+        xmlns:konwerterDoCzasu="clr-namespace:positionTimeConverterNS"
+        Title="MainWindow" Height="300" Width="650" MinWidth="650"
         x:Name="windowName" Loaded="startScreen">
+    <Window.Resources>
+        <konwerterDoCzasu:positionTimeConverter x:Key="konwerterFormatCzasu"/>
+    </Window.Resources>
     <DockPanel Margin="1,1,1,1">
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Button Width="40" Click="PlayFunc">Play</Button>
@@ -12,7 +15,14 @@
             <Label Content="Volume: " />
             <Slider Value="{Binding ElementName=videoClip, Path=Volume}" Maximum="1" Width="100"/>
             <Label Content="Time: "/>
-            <Slider Width="150"  x:Name="position" ValueChanged="changeVideoPostion"/>
+            <Slider Width="150"
+                    x:Name="position"
+                    ValueChanged="changeVideoPostion"
+                    Thumb.DragStarted="thumbDragStarted"
+                    Thumb.DragCompleted="thumDragCompleted"/>
+            <Label x:Name="positionDetail" Content="{Binding ElementName=position, Path=Value, Converter={StaticResource konwerterFormatCzasu}}" />
+            <Label Content=" of " />
+            <Label x:Name="totalVideoTime" />
         </WrapPanel>
         <MediaElement Source="HIGH SPEED Pitching.wmv"
                       Volume="0.01"
