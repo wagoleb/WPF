@@ -27,17 +27,17 @@ namespace ListBoxControl
         public MainWindow()
         {
             InitializeComponent();
+
+            DispatcherTimer timer = new DispatcherTimer();
+
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += dateTimer;
+            timer.Start();
         }
 
-        private void pokazWybrane(object sender, SelectionChangedEventArgs e)
+        private void dateTimer(object sender, EventArgs e)
         {
-            Calendar kalendarz = (Calendar)sender;
-            wartosci.Text = "";
-            foreach (var item in kalendarz.SelectedDates)
-            {
-                wartosci.Text += String.Format("{0}\n", item.ToString());
-            }
-            kombo.ItemsSource = kalendarz.SelectedDates;
+            zegar.Content = DateTime.Now.ToLocalTime();
         }
     }
 }
